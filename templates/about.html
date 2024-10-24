@@ -1,0 +1,144 @@
+{% extends 'index.html' %}
+
+{% block title %}About Us - La Whizz{% endblock %}
+
+{% block content %}
+<section id="about-us">
+    <img src="{{ url_for('static', filename='img/about-header.png') }}" alt="header-pic">
+    <div class="section-container">
+        <h2>About La Whizz</h2>
+        <p> <i class="fa fa-spinner" aria-hidden="true"></i> At La Whizz, we believe in harnessing 
+            the power of innovation to deliver expert solutions that drive success. With multiple 
+            experience in the business solutions industry, we've cultivated a reputation for 
+            excellence, reliability, and customer satisfaction.</p>
+            <div class="divider"></div>
+        <p> <i class="fa fa-spinner" aria-hidden="true"></i> Our mission is to provide businesses with 
+            the tools and strategies they need to thrive in an ever-changing marketplace. 
+            From tailored financial management solutions to cutting-edge 
+            administrative services, La Whizz offers a comprehensive suite of services designed to meet 
+            the unique challenges of modern businesses.</p>
+            <div class="divider"></div>
+        <p> <i class="fa fa-spinner" aria-hidden="true"></i> We pride ourselves on our commitment to integrity, 
+            collaboration, and forward-thinking. With a team of seasoned professionals dedicated to 
+            continuous improvement, we help businesses unlock their full potential.</p>
+    </div>
+</section>
+
+<section id="partner-team">
+    <div class="section-container">
+        <div class="partner-column">
+            <h2>Our Partners</h2>
+            <div class="partner-logo">
+                <div class="partner">
+                    <img src="{{ url_for('static', filename='img/proamity-logo.png') }}" alt="Pro Amity Corporate Sdn. Bhd.">
+                </div>
+                <div class="partner">
+                    <img src="{{ url_for('static', filename='img/sfai-logo.png') }}" alt="SFAI Malaysia">
+                </div>
+            </div>
+        </div>
+
+        <section class="team-column">
+            <h2>Meet Our Team</h2>
+            <div class="slideshow-inner">
+                <div class="team-slideshow"> 
+                    <div class="slide is-active">
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='img/team1.jpg') }}" alt="Team Member 1">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='img/team2.jpg') }}" alt="Team Member 2">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='img/team3.jpg') }}" alt="Team Member 3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arrows">
+                    <div class="arrow prev">
+                        <span class="svg svg-arrow-left">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26"> 
+                                <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> 
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="arrow next">
+                        <span class="svg svg-arrow-right">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26"> 
+                                <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-1.023-0.391,0-1.414C0.488,0.098,0.744,0,1,0z"/> 
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </div>   
+</section>
+
+<section id="our-leader">
+    <div class="section-container">
+        <h2>Our Leader</h2>
+        <div class="leader-profile">
+            <img src="{{ url_for('static', filename='img/people.png') }}" alt="Leader Name">
+            <div class="leader-info">
+                <h3>Lim Jia Yong</h3>
+                <p>Chief</p>
+                <p>With a long experience in accounting, Miss Lim Jia Yong has acquired certificates from 
+                    CIMA and MIA. Graduated from SEGi University College in Faculty of Business and Accounting,
+                    Miss Lim Jia Yong definitely have the credibility and skills to enhance the quality of her 
+                    firm. This has undoubtedly makes La Whizz easily established itself as one of the top 
+                    accounting firm in Malaysia.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  const nextButton = document.querySelector(".next");
+  const prevButton = document.querySelector(".prev");
+  const paginationItems = document.querySelectorAll(".pagination .item");
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === index);
+    });
+    paginationItems.forEach((item, i) => {
+      item.classList.toggle('is-active', i === index);
+    });
+    currentSlide = index;
+  }
+
+  function showNextSlide() {
+    let nextSlide = (currentSlide + 1) % totalSlides;
+    showSlide(nextSlide);
+  }
+
+  function showPrevSlide() {
+    let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(prevSlide);
+  }
+
+  nextButton.addEventListener("click", showNextSlide);
+  prevButton.addEventListener("click", showPrevSlide);
+
+  paginationItems.forEach((item, index) => {
+    item.addEventListener("click", () => showSlide(index));
+  });
+
+  setInterval(showNextSlide, 4000); // Auto-play every 4 seconds
+});
+
+</script>
+
+{% endblock %}

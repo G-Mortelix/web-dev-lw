@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* General styling for the splash screen */
+#splash-screen {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Ensure no scrollbars appear */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+
+
+body.splash-active {
+    overflow: hidden;
+}
+
+/* Container for the logo */
+#splash-screen .logo-container img {
+    display: flex;
+    width: 400px;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 50px;
+    animation: slideIn 0.9s ease-in-out forwards, slideOut 0.9s ease-in-out 1.5s forwards; /* Animations */
+}
+
+/* Container for the motto */
+.motto-container h1 {
+    font-size: 2em;
+    margin: 0;
+    opacity: 0; /* Initially invisible */
+    animation: slideIn 0.9s ease-in-out forwards, slideOut 0.9s ease-in-out 1.5s forwards; /* Animations */
+}
+
+/* Animation for sliding in from left to right */
+@keyframes slideIn {
+    from {
+        transform: translateX(-60%); /* Start off-screen left */
+        opacity: 0; /* Hidden */
+    }
+    to {
+        transform: translateX(0); /* In position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Animation for sliding out to the right */
+@keyframes slideOut {
+    from {
+        transform: translateX(0); /* Start in original position */
+        opacity: 1; /* Fully visible */
+    }
+    to {
+        transform: translateX(60%); /* Move off-screen right */
+        opacity: 0; /* Hidden */
+    }
+}

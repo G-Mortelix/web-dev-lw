@@ -1,0 +1,45 @@
+{% extends 'admin-base.html' %}
+
+{% block title %}Admin - Manage News{% endblock %}
+
+{% block content %}
+<h1>Manage News</h1>
+
+<div class="newsmanage-section-container">
+    <div class="header-actions">
+        <a href="{{ url_for('admin_bp.add_news') }}" class="btn btn-primary">Add New Article</a>
+    </div>
+
+    <div class="table-responsive">
+        {% if news_list %}
+        <table class="job-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for news in news_list %}
+                <tr>
+                    <td>{{ news.title }}</td>
+                    <td>{{ news.category }}</td>
+                    <td>
+                        <a href="{{ url_for('admin_bp.edit_news', news_id=news.id) }}" class="btn-action edit">Edit</a>
+                        <form action="{{ url_for('admin_bp.delete_news', news_id=news.id) }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No news articles available at the moment.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

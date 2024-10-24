@@ -1,0 +1,251 @@
+/* News Categories Section */
+#news-page {
+    background: linear-gradient(to top left, #b9d7dd, #6077c8);
+    padding: 50px 0;
+}
+
+.news-carousel {
+    overflow: hidden;  /* Hide overflow to make a clean scroll effect */
+    width: 100%;
+    position: relative;
+}
+
+#news-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+/* News-specific pagination */
+.news-pagination {
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.news-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.news-dot.is-active {
+    background-color: #333;  /* Active dot color */
+}
+
+.news-dot:hover {
+    background-color: #185ea4;  /* Hover color */
+}
+
+.news-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;  /* Smooth transition */
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;  /* Fixed width for cards */
+    flex-shrink: 0;  /* Prevent shrinking of cards */
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.news-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Stronger hover shadow */
+    transform: translateY(5px) 0.2s ease-in; /* Slight elevation effect on hover */
+    transform: scale(1.003);
+    transition: transform 0.2s ease;
+}
+
+.news-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px 0px 0px 0px;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-content h3 {
+    font-size: 1.3rem;
+    margin: 0px;
+    color:rgb(2, 10, 37);
+}
+
+.news-content p {
+    font-size: 1rem;
+    color: #000000;
+    text-align: justify;
+}
+
+.news-content a {
+    color: rgb(2, 10, 37); 
+    text-decoration: none;
+}
+
+.news-content a:hover {
+    color: rgb(11, 47, 163); 
+}
+
+.news-tag {
+    display: inline-block;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    color: white;
+}
+
+.news-tag.announcement {
+    background-color: #f35f36; /* Orange for announcements */
+}
+
+.news-tag.infomercial {
+    background-color: #1faf27; /* Green for infomercials */
+}
+
+
+/* News Detail Section */
+#news-detail {
+    background: linear-gradient(180deg, #b9d7dd, #6077c8);
+    padding: 50px 0;
+}
+
+.news-detail-image {
+    width: 100%;
+    max-width: 400px;
+    max-height: 300px;
+    height: auto;
+    margin: 20px 0;
+    object-fit: cover;
+}
+
+.news-detail-image:hover {
+    transform: scale(1.007);
+    transition: transform 0.1s;
+}
+
+#news-detail .section-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#news-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #000000;
+}
+
+#news-detail h1:hover {
+    color: #202020;
+}
+
+#news-detail p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+#news-detail a {
+    color: #0037ac;
+    text-decoration: none;
+}
+
+#news-detail a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        width: 100%;
+        max-width: 600px; /* Ensure the card doesn't stretch too wide on mobile */
+    }
+
+    #news-detail .section-container {
+        padding: 20px;
+    }
+
+    #news-detail h1 {
+        font-size: 2rem;
+    }
+
+    #news-detail p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Styling for placeholder cards */
+.placeholder {
+    opacity: 0.7; /* Slightly faded look for placeholders */
+}
+
+.placeholder .news-image {
+    filter: grayscale(100%); /* Greyscale effect for the placeholder images */
+}
+
+.placeholder h3 {
+    color: #888; /* Lighter text color for "Coming Soon" */
+}
+
+.placeholder p {
+    color: #bbb;
+}
+
+/* Style for navigation arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition: background-color 0.3s ease;  /* Smooth color transition */
+}
+
+.arrow-left {
+    left: 10px;  /* Adjust based on desired horizontal position */
+}
+
+.arrow-right {
+    right: 10px;  /* Adjust based on desired horizontal position */
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);  /* Darken background on hover */
+}
+
+

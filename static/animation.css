@@ -1,0 +1,25 @@
+/* animations.css */
+
+/* Keyframe for fading in with a slight upward motion */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at its original position */
+    }
+}
+
+/* General fade-up animation class */
+.fade-up {
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Only when the element enters the viewport, this will apply the animation */
+.animate {
+    opacity: 1 !important; /* Ensure visibility */
+}

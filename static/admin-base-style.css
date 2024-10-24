@@ -1,0 +1,40 @@
+/* Home Button for Admin Pages */
+.btn-home {
+    background-color: #185ea4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #0d407a;
+}
+
+/* Adjust header for admin pages */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    margin-left: 80px; /* To ensure h1 doesn't overlap with the home button */
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.content-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}

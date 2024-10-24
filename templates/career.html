@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+{% block title %}Careers at La Whizz{% endblock %}
+
+{% block content %}
+<section id="career-groups">
+    <div class="section-container">
+        <h1>Careers at La Whizz</h1>
+        <p>Explore the exciting career opportunities at La Whizz. Select your preferred career group below:</p>
+
+        <section id="why-join-us">
+            <h2>Why Join Us?</h2>
+            <ul>
+                <li>Competitive salary and benefits package.</li>
+                <li>Opportunities for professional development and career growth.</li>
+                <li>Work in a collaborative and innovative environment.</li>
+                <li>Flexible work arrangements and support for work-life balance.</li>
+            </ul>
+        </section>
+
+        <div class="career-grid-horizontal">
+            <div class="career-card-horizontal">
+                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Fresh Graduate Icon" class="career-icon">
+                <h2>Fresh Graduate</h2>
+                <p>Begin your career with opportunities designed for fresh graduates.</p>
+                <a href="{{ url_for('user_bp.career_by_group', group='Fresh Graduate') }}" class="cta-button">View Jobs</a>
+            </div>
+
+            <div class="career-card-horizontal">
+                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Internship Icon" class="career-icon">
+                <h2>Internship</h2>
+                <p>Start your journey with hands-on experience through our internship programs.</p>
+                <a href="{{ url_for('user_bp.career_by_group', group='Internship') }}" class="cta-button">View Jobs</a>
+            </div>
+
+            <div class="career-card-horizontal">
+                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Professional Icon" class="career-icon">
+                <h2>Professional</h2>
+                <p>Explore professional opportunities for experienced individuals.</p>
+                <a href="{{ url_for('user_bp.career_by_group', group='Professional') }}" class="cta-button">View Jobs</a>
+            </div>        
+        </div>
+    </div>
+</section>
+    <script>
+        document.getElementById('group').addEventListener('change', function() {
+            var group = this.value;
+        
+            // Send request to get job positions based on the selected group
+            fetch(`/get-job-positions/${group}`)
+                .then(response => response.json())
+                .then(jobs => {
+                    var positionDropdown = document.getElementById('position');
+                    positionDropdown.innerHTML = '';  // Clear existing dropdown options
+        
+                    // Populate dropdown with job positions
+                    jobs.forEach(function(job) {
+                        var option = document.createElement('option');
+                        option.value = job['id'];  // Job ID as value
+                        option.text = job['position'];  // Job position as display text
+                        positionDropdown.add(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching positions:', error);
+                });
+        });
+        </script>
+        
+{% endblock %}

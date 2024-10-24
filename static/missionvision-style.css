@@ -1,0 +1,37 @@
+/* mission-vision.css */
+
+/* Mission, Vision, Values */
+#mission-vision {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: linear-gradient(135deg, #456598, #7cdfaf);
+    min-height: calc(100vh - 80px); 
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mv-item {
+    text-align: center;
+    max-width: 300px;
+    flex: 1 1 30%;
+    margin: 10px;
+}
+
+
+.mv-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #185ea4;
+}
+
+.mv-item h3 {
+    font-size: 1.8rem;
+    color: #000000;
+}
+
+.mv-item p {
+    font-size: 1rem;
+    color: #333;
+}
+

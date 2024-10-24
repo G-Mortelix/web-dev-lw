@@ -1,0 +1,104 @@
+/* General Container */
+.newsmanage-section-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+/* Header Section */
+.newsmanage-section-container h1 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add News Button */
+.newsmanage-section-container .header-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.newsmanage-section-container .btn-primary {
+    background-color: #185ea4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.newsmanage-section-container .btn-primary:hover {
+    background-color: #0d407a;
+}
+
+/* Table Styles */
+.newsmanage-section-container .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.newsmanage-section-container .job-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.newsmanage-section-container .job-table th, .newsmanage-section-container .job-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.newsmanage-section-container .job-table th {
+    background-color: #f4f6f9;
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.newsmanage-section-container .job-table td {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Action Buttons */
+.newsmanage-section-container .btn-action {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 0.9rem;
+}
+
+.newsmanage-section-container .btn-action.edit {
+    background-color: #28a745;
+}
+
+.newsmanage-section-container .btn-action.delete {
+    background-color: #dc3545;
+}
+
+.newsmanage-section-container .btn-action:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .newsmanage-section-container .job-table th, .newsmanage-section-container .job-table td {
+        padding: 10px;
+    }
+
+    .newsmanage-section-container .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,100 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between left (logo), center (nav), and right (social icons) */
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+/* Navbar container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.navbar .icon-logo {
+    flex: 0 0 150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar .icon-logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Navigation links */
+.navbar .nav-list {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .nav-list ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-list ul li {
+    margin-left: 2rem;
+}
+
+.navbar .nav-list ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar .nav-list ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-list ul li a:hover::after {
+    width: 100%;
+    background-color: #185ea4;
+}
+
+/* Social icons */
+.navbar .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar .social-icons a {
+    margin-left: 15px;
+}
+
+.navbar .social-icons img {
+    width: 25px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.navbar .social-icons img:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,176 @@
+/* services.css */
+
+#services {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: linear-gradient(25deg, #cfe2f1, #2f9ead);
+    min-height: calc(100vh - 80px);
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+#services .service-container {
+    display: flex;
+    text-align: center;
+    max-width: 250px;
+    flex: 1 1 30%;
+
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: space-between;  /* Push button to the bottom */
+    text-align: center;
+    padding: 20px;
+    background-color: white;  /* Add background color for card look */
+    border-radius: 10px;  /* Slightly rounded corners for card effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a 3D effect */
+    height: 340px;  /* Ensure equal height cards */
+}
+
+#services .section-container {
+    padding-bottom: 80px;
+}
+
+#services-detail .cta-button {
+    margin-bottom: 40px;
+}
+
+#services .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+#services .icon img {
+    width: 60px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#services .service-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Increase shadow on hover */
+    background-color: rgb(236, 240, 244);
+    transform: translateY(-5px);  /* Slight lift on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#services .service-container:hover .icon {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+#services h2 {
+    font-size: 1.5rem;
+    color: #185ea4;
+}
+
+#services p {
+    font-size: 1rem;
+    color: #1d1b1b;
+}
+
+@media (max-width: 768px) {
+    #services,
+    #mission-vision {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    #services .service-container,
+    .mv-item {
+        max-width: 100%; /* Allow full width on smaller screens */
+        flex: 1 1 100%;
+    }
+}
+
+#services .cta-button {
+    background-color: #297db2;
+    border: 0 solid #1846b9;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#services .cta-button:hover {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+  .button-81 {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/*service-detail section*/
+#service-detail {
+    background-image: url('/static/img/service-detail-bg.png');
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+#service-detail .section-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+#service-detail p {
+    font-size: 1rem;
+    color: #1d1b1b;
+    padding-bottom: 30px;
+}
+
+#service-detail .cta-button {
+    background-color: #297db2;
+    border: 0 solid #1846b9;
+   
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#service-detail .cta-button:hover {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+

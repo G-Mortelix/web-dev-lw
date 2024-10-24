@@ -1,0 +1,107 @@
+/* Shared Form Styles */
+.addedit-job-section-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Title */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.addedit-job-section-container .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addedit-job-section-container .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: #185ea4;
+    outline: none;
+}
+
+/* Button Styles */
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #185ea4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0d407a;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #185ea4;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .addedit-job-section-container {
+        padding: 20px;
+    }
+
+    .addedit-job-section-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}

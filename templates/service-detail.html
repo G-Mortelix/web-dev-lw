@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ service.title() }} Services{% endblock %}
+
+{% block content %}
+<section id="service-detail">
+    <div class="section-container">
+        {% if service == 'bookkeeping' %}
+            <h1>Book-keeping Services</h1>
+            <h2>What We Offer:</h2>
+            <ul>
+                <li>Accounts Receivable and Payable Management</li>
+                <li>Full Set of Accounts (Profit & Loss, Balance Sheet, Trial Balance, General Ledger)</li>
+                <li>Financial Reporting on a Monthly, Quarterly, and Annual Basis</li>
+            </ul>
+            <p>With our book-keeping services, you can focus on growing your business while we handle your day-to-day financial management.</p>
+        
+        {% elif service == 'business-administration' %}
+            <h1>Business Administration Services</h1>
+            <h2>Our Administration Services Include:</h2>
+            <ul>
+                <li>Invoice Generation and Billing Management (Compliance with e-invoicing)</li>
+                <li>Office Management and Administrative Support</li>
+            </ul>
+            <p>With our professional administration support, your business can focus on innovation and growth without being bogged down by administrative burdens.</p>
+
+        {% elif service == 'human-resources' %}
+            <h1>Human Resources Services</h1>
+            <h2>Our HR Services Include:</h2>
+            <ul>
+                <li>Recruitment and Talent Acquisition Services</li>
+                <li>Payroll Processing Services</li>
+                <li>Employee Training and Development Programs</li>
+            </ul>
+            <p>We partner with businesses to foster a strong, motivated workforce and a positive organizational culture.</p>
+
+        {% else %}
+            <h1>Service Not Found</h1>
+            <p>The requested service is not available at the moment.</p>
+        {% endif %}
+
+        <a href="/contact" class="cta-button">Contact Us for More Information</a>
+    </div>
+</section>
+{% endblock %}

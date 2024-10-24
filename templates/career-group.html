@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block title %}Careers at La Whizz{% endblock %}
+
+{% block content %}
+<section id="career-group">
+    <div class="section-container">
+        <h1>{{ group }} Jobs</h1>
+
+        {% if jobs %}
+        <ul class="job-list">
+            {% for job in jobs %}
+            <li class="job-list-item">
+                <h3>{{ job['Position'] }}</h3>
+                <div class="divider"></div>
+                <p>Description:</p>
+                <ul>
+                    {% for line in job['Description'].split('\n') %}
+                    <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Requirements:</p>
+                <ul>
+                    {% for line in job['Requirements'].split('\n') %}
+                    <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Benefits:</p>
+                <ul>
+                    {% for line in job['Notes'].split('\n') %}
+                    <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Location:</p>
+                <ul>
+                    {% for line in job['Location'].split('\n') %}
+                    <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="https://forms.gle/qByDPjwRfC5zL9rY8" target="_blank" class="cta-button">Apply Now</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No job positions available for this group at the moment.</p>
+        {% endif %}
+    </div>
+</section>
+                
+{% endblock %}

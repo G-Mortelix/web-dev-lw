@@ -1,0 +1,125 @@
+/* Main wrapper that holds the content and footer */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Main content should take up the remaining space */
+#main-content {
+    flex: 1;
+}
+
+.footer-column .divider {
+    width: 25px;
+    height: 3px;
+    background-color: #e68181;
+    margin: 10px 0; 
+}
+
+#footer-section .container {
+    max-width: 900px; /* Reduced width */
+    margin: auto;
+}
+
+/* Footer Styles */
+.footer-section {
+    background: linear-gradient(135deg, #336986, #173077);
+    color: #000000;
+    padding: 10px 0; /* Reduced padding between top and bottom */
+    text-align: left;
+    width: 100%;
+    margin-top: auto;
+
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px; /* Reduced max-width */
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex-basis: 22%; /* Reduced flex-basis for smaller columns */
+    padding: 0 10px;
+    width: 22%;
+}
+
+.footer-column iframe {
+    width: 100%;
+    height: 120px; /* Reduced height for map */
+}
+
+.footer-column h3 {
+    font-size: 16px; /* Reduced font size */
+    color: #ffffff;
+    margin-bottom: 10px; /* Reduced margin */
+    position: relative;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding-left: 0; /* Remove default list indent */
+}
+
+.footer-column ul li a {
+    font-size: 14px; /* Reduced font size for links */
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding-left: 0; /* Remove the extra padding to avoid indentation */
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-column ul li a:hover {
+    color: #000000;
+}
+
+.footer-column .social-links {
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer-column .social-links a {
+    height: 30px;
+    width: 30px; /* Reduced size for icons */
+    margin-right: 10px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff; /* White background */
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-column .social-links img {
+    width: 20px; /* Ensure icons fit inside the button */
+    height: 20px;
+}
+
+.footer-column .social-links a:hover {
+    background-color: #e91e63; /* Add a hover effect */
+}
+
+/* Responsive Design */
+@media(max-width: 767px){
+    .footer-column {
+        width: 45%; /* Adjust columns for smaller screens */
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-column {
+        width: 100%;
+    }
+}

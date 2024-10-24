@@ -1,0 +1,121 @@
+/* Contact Us Section */
+#contact-us {
+    background-color: #f4f7fa; /* Light background */
+    background-image: url('/static/img/contact-bg.png');
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+#contact-us .section-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#contact-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #185ea4;
+    font-weight: 600;
+}
+
+/* Contact Form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #185ea4;
+    box-shadow: 0 0 10px rgba(24, 94, 164, 0.1);
+    outline: none;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #185ea4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    text-align: center;
+    align-self: center;
+}
+
+.cta-button:hover {
+    background-color: #0d407a;
+}
+
+/* Add subtle hover effect to input fields */
+.form-group input:hover, 
+.form-group textarea:hover {
+    border-color: #aaa;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #e7f5e1;
+    color: #4caf50;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #fbe4e4;
+    color: #f44336;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #contact-us .section-container {
+        padding: 20px;
+    }
+
+    #contact-us h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        width: 100%; /* Full width on mobile */
+    }
+}

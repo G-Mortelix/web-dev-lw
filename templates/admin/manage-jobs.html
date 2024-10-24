@@ -1,0 +1,57 @@
+{% extends 'admin-base.html' %}
+
+{% block title %}Admin - Manage Job{% endblock %}
+
+{% block content %}
+<div class="jobmanage-section-container">
+    <h1>Manage Jobs</h1>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <a href="https://docs.google.com/spreadsheets/d/1mriklR-LoUxlMsdi8jCkFWHf8mTI8--Qcl4rM7lilf8/edit?usp=sharing" target="_blank" class="btn-primary" style="margin-bottom: 20px;">Open Google Sheet</a>
+    
+    <div class="header-actions">
+        <a href="{{ url_for('admin_bp.add_job') }}" class="btn-primary">Add New Job</a>
+    </div>
+
+    {% if jobs %}
+        <div class="table-responsive">
+            <table class="job-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Group</th>
+                        <th>Description</th>
+                        <th>Requirements</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Post Date</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job['Position'] }}</td>
+                        <td>{{ job['Group'] }}</td>
+                        <td>{{ job['Description'].replace('\n', '<br>') | safe }}</td>
+                        <td>{{ job['Requirements'].replace('\n', '<br>') | safe }}</td>
+                        <td>{{ job['Location'] }}</td>
+                        <td>
+                            <span class="status {{ 'open' if job['Status'] == 'Open' else 'closed' }}">{{ job['Status'] }}</span>
+                        </td>
+                        <td>{{ job['Post Date'] }}</td>
+                        <td>{{ job['Notes'].replace('\n', '<br>') | safe }}</td>
+                        <td>
+                            <a href="{{ url_for('admin_bp.edit_job', job_uuid=job['UUID']) }}" class="btn-action edit">Edit</a>
+                            <a href="{{ url_for('admin_bp.delete_job', job_uuid=job['UUID']) }}" class="btn-action delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No jobs available at the moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

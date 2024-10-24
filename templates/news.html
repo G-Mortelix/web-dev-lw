@@ -1,0 +1,157 @@
+<!-- news.html -->
+{% extends 'index.html' %}
+
+{% block title %}Latest News{% endblock %}
+
+{% block content %}
+<section id="news-page">
+    <div class="section-container">
+        <h1>Latest News</h1>
+
+        <div class="news-carousel">
+            <div class="arrow arrow-left"><</div> 
+            <div class="news-grid">
+                {% if articles %}
+                    {% for article in articles %}
+                    <div class="news-card">
+                        <span class="news-tag {{ article.category | lower }}">{{ article.category }}</span>
+                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-image">
+                        <div class="news-content">
+                            <h3><a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">{{ article.title }}</a></h3>
+                            <p>{{ article.content[:150] }}... 
+                            <a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">Read More</a></p>
+                        </div>
+                    </div>
+                    {% endfor %}
+    
+                    <!--placeholder for empty spots-->
+                    {% for i in range(10 - articles|length) %}
+                    <div class="news-card placeholder">
+                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="Coming Soon" class="news-image">
+                        <div class="news-content">
+                            <h3>Coming Soon</h3>
+                            <p>New article will be available soon. Stay tuned for updates.</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <!-- Clone the first news card to append at the end -->
+                    {% for article in articles[:3] %}
+                    <div class="news-card clone">
+                        <span class="news-tag {{ article.category | lower }}">{{ article.category }}</span>
+                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-image">
+                        <div class="news-content">
+                            <h3><a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">{{ article.title }}</a></h3>
+                            <p>{{ articles[0].content[:150] }}... 
+                            <a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">Read More</a></p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                {% else %}
+                    <!-- If no articles are available, display 10 placeholders -->
+                    {% for i in range(10) %}
+                    <div class="news-card placeholder">
+                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="Coming Soon" class="news-image">
+                        <div class="news-content">
+                            <h3>Coming Soon</h3>
+                            <p>New article will be available soon. Stay tuned for updates.</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="arrow arrow-right">></div>
+
+            <div class="news-pagination">
+                {% for i in range(10) %}
+                <div class="news-dot" data-index="{{ i }}"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const newsGrid = document.querySelector(".news-grid");
+        const newsCards = document.querySelectorAll(".news-card");
+        const dots = document.querySelectorAll(".news-dot");
+        const arrowLeft = document.querySelector(".arrow-left");
+        const arrowRight = document.querySelector(".arrow-right");
+        let currentIndex = 0;
+        const cardWidth = newsCards[0].offsetWidth + 20;  // Including margin
+        const totalCards = newsCards.length;
+        const realCardsCount = totalCards - 4;
+
+        function updateActiveDot(index) {
+            dots.forEach(dot => dot.classList.remove("is-active"));
+            dots[index % 10].classList.add("is-active");
+        }
+
+        function scrollToIndex(index) {
+            newsGrid.style.transform = `translateX(-${index * cardWidth}px)`;
+            updateActiveDot(index);
+        }
+
+        // Left arrow click
+        arrowLeft.addEventListener("click", function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = realCardsCount - 1;
+            }
+            scrollToIndex(currentIndex);
+        });
+
+        // Right arrow click
+        arrowRight.addEventListener("click", function() {
+            if (currentIndex < realCardsCount) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            scrollToIndex(currentIndex);
+        });
+
+        // Dots click functionality
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", function () {
+                currentIndex = index;
+                scrollToIndex(currentIndex);
+            });
+        });
+    
+        // Auto-scroll functionality remains unchanged
+        function autoScrollNews() {
+            currentIndex++;
+            if (currentIndex > realCardsCount) {
+                newsGrid.style.transition = 'none';  // Disable transition for the jump
+                newsGrid.style.transform = `translateX(0px)`;
+                currentIndex = 1;
+
+                setTimeout(() => {
+                    newsGrid.style.transition = 'transform 0.5s ease-in-out';
+                    newsGrid.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                }, 0);
+            } else {
+                newsGrid.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+            updateActiveDot(currentIndex);
+        }
+
+        // Keep the auto-scroll interval
+        let autoScroll = setInterval(autoScrollNews, 6000);
+
+        // Optional: Pause on hover, resume on mouse leave
+        document.querySelector(".news-carousel").addEventListener("mouseenter", function() {
+            clearInterval(autoScroll);  // Stop scrolling on hover
+        });
+
+        document.querySelector(".news-carousel").addEventListener("mouseleave", function() {
+            autoScroll = setInterval(autoScrollNews, 6000);  // Resume scrolling
+        });
+    });
+
+    </script>
+</section>
+{% endblock %}

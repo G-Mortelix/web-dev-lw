@@ -1,0 +1,22 @@
+<!-- news-detail.html -->
+{% extends 'index.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<section id="news-detail">
+    <div class="section-container">
+        <h1>{{ article.title }}</h1>
+
+        {% if article.image_url %}
+        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="news-detail-image">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-detail-image">
+        {% endif %}
+
+        <p>{{ article.content.replace('\n', '<br>') | safe }}</p>  <!-- Full news content -->
+
+        <p><strong>Source:</strong> <a href="{{ article.source }}" target="_blank">Read the original information here</a></p>
+    </div>
+</section>
+{% endblock %}

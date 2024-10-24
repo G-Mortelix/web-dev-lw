@@ -1,0 +1,164 @@
+{% extends 'index.html' %}
+
+{% block title %}Home - La Whizz{% endblock %}
+
+{% block content %}
+<section id="hero">
+    <div class="section-container" >
+        <h1>Welcome to La Whizz</h1>
+        <p>Your Trusted Partner in Professional Business Solutions</p>
+        <a href="/about" class="cta-button">Read More</a>
+    </div>
+</section>
+
+<section id="services">
+    <div class="service-container">
+        <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/bookkeeping-icon.png') }}" alt="Bookkeeping Icon">
+            </div>
+        </a>
+        <h2>Book-keeping</h2>
+        <p>Keep your finances on track with ease.</p>
+        <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service-container">
+        <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/businessadmin-icon.png') }}" alt="Business Administration Icon">
+            </div>
+        </a>
+        <h2>Business Administration</h2>
+        <p>Efficient management for your business.</p>
+        <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service-container">
+        <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/hr-icon.png') }}" alt="Human Resources Icon">
+            </div>
+        </a>
+        <h2>Human Resources</h2>
+        <p>Comprehensive HR services for your team.</p>
+        <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}" class="cta-button">Learn More</a>
+    </div>
+</section>
+
+<!-- Mission, Vision, Values -->
+<section id="mission-vision">
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/mission.png') }}" width="94px" alt="Mission Icon">
+        </div>
+        <h3>Our Mission</h3>
+        <p>Empowering clients through financial literacy and simplifying financial complexity.</p>
+        <p>⁠Innovating financial solutions with a delivering measurable results.</p>
+    </div>
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/vision.png') }}" width="95px" alt="Vision Icon">
+        </div>
+        <h3>Our Vision</h3>
+        <p>We aspire to be the best professional services firm by providing innovative 
+            and practical services to clients and aims to produce a multi talented account expertise.</p>
+    </div>
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/value.png') }}" width="95px" alt="Value Icon">
+        </div>
+        <h3>Our Values</h3>
+        <p>Integrity, expertise, innovation, and continuous improvements in everything we do.</p>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+    <div class="section-container">
+        <h2>What Our Clients Say,</h2>
+        <div class="testimonial-frame"> 
+            <div class="testimonial-slideshow">
+                <div class="testimonial">
+                    <p>"La Whizz transformed our operations with their excellent services."</p>
+                    <span>- Client A</span>
+                </div>
+    
+                <div class="testimonial">
+                    <p>"The HR solutions provided by La Whizz were top-notch!"</p>
+                    <span>- Client B</span>
+                </div>
+    
+                <div class="testimonial">
+                    <p>"Highly recommend La Whizz for bookkeeping and administrative services."</p>
+                    <span>- Client C</span>
+                </div>
+            
+                <div class="testimonial">
+                    <p>"They have been a great partner in helping our business grow."</p>
+                    <span>- Client D</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // For testimonials
+    document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(".testimonial");
+        const slideshow = document.querySelector(".testimonial-slideshow");
+
+        const nextButton = document.createElement("button");
+        const prevButton = document.createElement("button");
+        const likeButton = document.createElement("button"); 
+
+        // Set text for navigation buttons
+        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        likeButton.innerHTML = '<i class="fas fa-thumbs-up"></i>';
+
+        // Add class for styling
+        nextButton.classList.add("nav-button");
+        prevButton.classList.add("nav-button");
+        likeButton.classList.add("like-button");
+
+        // Create a div to hold all buttons (next, prev, like)
+        const nav = document.createElement("div");
+        nav.id = "testimonial-nav";
+        nav.appendChild(prevButton);
+        nav.appendChild(nextButton);
+        nav.appendChild(likeButton); // Add the like button into the navigation container
+        document.getElementById("testimonials").appendChild(nav);
+
+        let currentTestimonial = 0;
+        const testimonialCount = testimonials.length;
+
+        // Function to show the next testimonial
+        function showNextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialCount;
+            slideshow.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        // Function to show the previous testimonial
+        function showPrevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonialCount) % testimonialCount;
+            slideshow.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        // Event listeners for navigation
+        nextButton.addEventListener("click", showNextTestimonial);
+        prevButton.addEventListener("click", showPrevTestimonial);
+
+        // Event listener for like button
+        likeButton.addEventListener("click", function () {
+            likeButton.classList.toggle("liked"); // Toggle "liked" class on click
+        });
+
+        // Auto-play the slideshow every 4 seconds
+        setInterval(showNextTestimonial, 4000);
+    });
+</script>
+
+
+{% endblock %}

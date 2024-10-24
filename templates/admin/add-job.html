@@ -1,0 +1,86 @@
+{% extends 'admin-base.html' %}
+
+{% block title %}Admin - Add Job{% endblock %}
+
+{% block content %}
+<div class="addeditjob-section-container">
+    <h1>Add New Job</h1>
+
+    <form action="{{ url_for('admin_bp.add_job') }}" method="POST" class="form-container">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <div class="form-group">
+            <label for="title">Position:</label>
+            <input type="text" id="title" name="title" required placeholder="Enter job title">
+        </div>
+
+        <div class="form-group">
+            <label for="group">Group:</label>
+            <select id="group" name="group" required>
+                <option value="Internship">Internship</option>
+                <option value="Fresh Graduate">Fresh Graduate</option>
+                <option value="Professional">Professional</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required placeholder="Enter job description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="requirements">Requirements:</label>
+            <textarea id="requirements" name="requirements" placeholder="Enter job requirements"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="post_date">Post Date:</label>
+            <input type="date" id="post_date" name="post_date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes (Optional):</label>
+            <textarea id="notes" name="notes" placeholder="Add any notes"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Add Job</button>
+    </form>
+
+    <a href="{{ url_for('admin_bp.manage_jobs') }}" class="back-link">Back to Manage Jobs</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Automatically focus on date input when clicked
+        const dateInput = document.getElementById('post_date');
+        dateInput.addEventListener('click', function() {
+            this.showPicker();  // Triggers date picker on click
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dateInput = document.querySelector("input[type='date']");
+      
+      // Automatically show the calendar when the input is focused
+      dateInput.addEventListener("focus", function () {
+        this.showPicker();
+      });
+    });
+</script>
+
+{% endblock %}

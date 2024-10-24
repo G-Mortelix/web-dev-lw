@@ -1,0 +1,76 @@
+/* General Container */
+.addedit-news-section-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+/* Header Section */
+.addedit-news-section-container h1 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.addedit-news-section-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addedit-news-section-container label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.addedit-news-section-container .form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.addedit-news-section-container .form-control:focus {
+    border-color: #185ea4;
+    outline: none;
+}
+
+/* Submit Button */
+.addedit-news-section-container .btn-primary {
+    background-color: #185ea4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.addedit-news-section-container .btn-primary:hover {
+    background-color: #0d407a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .addedit-news-section-container {
+        padding: 20px;
+    }
+
+    .addedit-news-section-container h1 {
+        font-size: 2rem;
+    }
+
+    .addedit-news-section-container .btn-primary {
+        width: 100%; /* Full width on mobile */
+    }
+}
