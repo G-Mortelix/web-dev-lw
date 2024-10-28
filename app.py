@@ -45,7 +45,7 @@ admin_init_app(app)
 # Homepage route
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 # Admin authentication loader
 @login_manager.user_loader
