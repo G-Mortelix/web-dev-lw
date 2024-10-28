@@ -3,12 +3,12 @@
 #services {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    background: linear-gradient(25deg, #cfe2f1, #2f9ead);
-    min-height: calc(100vh - 80px);
+    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
+    padding: 200px 0px;
     align-items: center;
     flex-wrap: wrap;
     margin: auto;
+    
 }
 
 #services .service-container {
@@ -20,15 +20,17 @@
     flex-direction: column;  /* Stack items vertically */
     justify-content: space-between;  /* Push button to the bottom */
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background-color: white;  /* Add background color for card look */
     border-radius: 10px;  /* Slightly rounded corners for card effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a 3D effect */
     height: 340px;  /* Ensure equal height cards */
+    
 }
 
 #services .section-container {
     padding-bottom: 80px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #services-detail .cta-button {
@@ -64,7 +66,7 @@
 
 #services h2 {
     font-size: 1.5rem;
-    color: #185ea4;
+    color: #6c1d3e;
 }
 
 #services p {
@@ -86,14 +88,14 @@
 }
 
 #services .cta-button {
-    background-color: #297db2;
-    border: 0 solid #1846b9;
+    background-color: #831e35;
+    border: 0 solid #893b56;
     border-radius: 1.5rem;
     box-sizing: border-box;
-    color: #0d172a;
+    color: #feebf6;
     cursor: pointer;
     display: inline-block;
-    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;
@@ -109,7 +111,7 @@
 }
 
 #services .cta-button:hover {
-    background-color: #1e293b;
+    background-color: #3b1e26;
     color: #fff;
 }
 
@@ -123,20 +125,25 @@
 /*service-detail section*/
 #service-detail {
     background-image: url('/static/img/service-detail-bg.png');
-    padding: 60px 0;
+    padding: 210px 0;
     background-size: cover;
     background-position: center;
 }
 
 #service-detail .section-container {
-    max-width: 900px;
+    max-width: 750px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 40px 60PX;
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: justify;
-    font-family: sans-serif;
+    align-items: center;
+}
+
+#service-detail h1 {
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 #service-detail p {
@@ -146,14 +153,14 @@
 }
 
 #service-detail .cta-button {
-    background-color: #297db2;
-    border: 0 solid #1846b9;
+    background-color: #831e35;
+    border: 0 solid #893b56;
    
     box-sizing: border-box;
-    color: #0d172a;
+    color: #d9dee8;
     cursor: pointer;
     display: inline-block;
-    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1;
@@ -169,7 +176,7 @@
 }
 
 #service-detail .cta-button:hover {
-    background-color: #1e293b;
+    background-color: #3b1e2c;
     color: #fff;
 }
 

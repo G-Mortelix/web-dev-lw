@@ -21,7 +21,7 @@
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
-    color: #185ea4;
+    color: #a41860;
     font-weight: 600;
 }
 
@@ -58,14 +58,14 @@
 
 .form-group input:focus, 
 .form-group textarea:focus {
-    border-color: #185ea4;
+    border-color: #a4185c;
     box-shadow: 0 0 10px rgba(24, 94, 164, 0.1);
-    outline: none;
+    outline: none;  
 }
 
 .cta-button {
     padding: 15px 30px;
-    background-color: #185ea4;
+    background-color: #680c34;
     color: white;
     border: none;
     border-radius: 5px;

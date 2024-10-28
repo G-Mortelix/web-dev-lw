@@ -1,15 +1,25 @@
-/* Navbar */
+/* Transparent navbar only on the homepage */
+.homepage .navbar {
+    background-color: rgba(0,0,0,0); 
+    box-shadow: none; 
+}
+
+.homepage .navbar .nav-list ul li a {
+    color: #fff; 
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Space between left (logo), center (nav), and right (social icons) */
     align-items: center;
-    background-color: #ffffff;
+    background-color: rgba(245, 189, 189, 0.647); /* Slight opacity added */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; 
     min-height: 3rem;
+    overflow: hidden;
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    padding: 10px 20px;
 }
 
 /* Navbar container */
@@ -48,6 +58,20 @@
     justify-content: center;
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+/* Ensure nav items stack or shrink for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar .nav-list ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-list ul li {
+        margin-left: 0;
+        margin-bottom: 10px; /* Add spacing when items are stacked */
+    }
 }
 
 .navbar .nav-list ul li {
@@ -67,7 +91,7 @@
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #000;
+    background-color: #7f263d;
     left: 0;
     bottom: -5px;
     transition: width 0.3s ease-in-out;
@@ -75,7 +99,7 @@
 
 .navbar .nav-list ul li a:hover::after {
     width: 100%;
-    background-color: #185ea4;
+    background-color: #7f263d;
 }
 
 /* Social icons */
@@ -86,7 +110,7 @@
 }
 
 .navbar .social-icons a {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .navbar .social-icons img {

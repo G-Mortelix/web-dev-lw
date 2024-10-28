@@ -4,9 +4,8 @@
 #mission-vision {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    background: linear-gradient(135deg, #456598, #7cdfaf);
-    min-height: calc(100vh - 80px); 
+    padding: 60px 20px;
+    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
     align-items: center;
     flex-wrap: wrap;
 }

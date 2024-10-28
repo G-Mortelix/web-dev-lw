@@ -1,16 +1,14 @@
-/* general.css */
-
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     font-weight: 500;
     color: #333;
-    overflow-x: hidden;
     scroll-behavior: smooth;  
+}
 
-
-    background-image: url('/static/img/super-bg.jpg');
+body {
+    background-image: url('/static/img/super-bg.png');
     background-color: rgb(255, 255, 255);
     background-size: cover; 
     background-attachment: fixed; 
@@ -18,17 +16,41 @@ body, html {
     background-repeat: no-repeat;
 }
 
+html {
+    overflow-x: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    width: 100%;
+}
+
 .container {
     max-width: 1200px;
     padding: 0 50px;
+    margin: 0 auto; /* Centers content for wider screens */
 }
 
 .section-container {
-    max-width: 1200px; /* This constrains the content width */
+    max-width: 1200px;
     width: 100%;
-    padding: 0 1.5rem; /* Optional padding for responsiveness */
+    padding: 0 1.5rem;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar and other sections should adjust better on smaller screens */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0 30px; /* Less padding on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Further reduce padding for smaller devices */
+    }
 }
 
 /* Animation for icons */
@@ -40,7 +62,3 @@ body, html {
 .icon:hover {
     transform: scale(1.2);
 }
-
-
-
-

@@ -1,6 +1,6 @@
 /*about us section-start*/
 #about-us {
-    background: linear-gradient(270deg, #cfe5e9, #69c4fc);
+    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
 }
 
 #about-us .section-container {
@@ -20,12 +20,10 @@
 #about-us h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
     text-align: center;
 }
 
 #about-us p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.0rem;
     line-height: 1.6;
     color: black;
@@ -41,20 +39,19 @@
 .divider {
     width: 400px;
     height: 3px;
-    background-color: #185ea4;
-    margin: 20px auto; /* Center the divider */
+    background-color: #a41818;
+    margin: 20px auto; 
 }
 /*about us section-end*/
 
 /*partner-team section-start*/
 
-#partner-team {
-    padding: 40px;
-    background: linear-gradient(270deg, #cfe5e9, #69c4fc);
+#partner {
+    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
     text-align: center;
 }
 
-#partner-team .section-container {
+#partner .section-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -71,7 +68,6 @@
 .partner-column h2 {
     font-size: 2.5rem;
     margin-bottom: 80px;
-    font-family: 'Poppins', sans-serif;
     color: #000000;
 }
 
@@ -88,6 +84,7 @@
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .partner img:hover {
@@ -107,28 +104,12 @@
 }
 /*partner-section-end*/
 
-/*team section-start*/
-.team-column h2{
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
-}
-
-.team-column { 
-    overflow: hidden;
+/* .slideshow-inner { 
     position: relative;
     width: 100%;
-    height: auto;
-    z-index: 1;
-}
-
-.slideshow-inner { 
-    position: relative;
-    width: 100%;
-    max-width: 600px; /* Adjust based on how large the images should be */
+    max-width: 600px;
     max-height: 400px;
-    margin: 0 auto; /* Centering the slideshow */
+    margin: 0 auto; 
     height: auto;
 }
 
@@ -186,23 +167,22 @@
 }
 
 .arrow:hover {
-    background-color: rgba(255, 255, 255, 1); /* Full white background on hover */
-    transform: scale(1.1); /* Small hover effect */
-}
+    background-color: rgba(255, 255, 255, 1); 
+    transform: scale(1.1); 
+} */
 
 /*team-end*/
 
 /* Our Leader Section */
 #our-leader {
-    background: linear-gradient(270deg, #cfe5e9, #69c4fc);
-    padding: 50px 0;
+    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
+    padding: 10px 20px 80px 20px;
     text-align: center;
 }
 
 #our-leader h2 {
     font-size: 3rem;
     margin-bottom: 30px;
-    font-family: 'Poppins', sans-serif;
     color: #000000;
 }
 
@@ -233,14 +213,12 @@
 .leader-info h3 {
     font-size: 2rem;
     margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
     color: #000;
 }
 
 .leader-info p {
     font-size: 1rem;
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
     color: #000000;
 }
 

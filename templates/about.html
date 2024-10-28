@@ -24,7 +24,7 @@
     </div>
 </section>
 
-<section id="partner-team">
+<section id="partner">
     <div class="section-container">
         <div class="partner-column">
             <h2>Our Partners</h2>
@@ -37,48 +37,33 @@
                 </div>
             </div>
         </div>
-
-        <section class="team-column">
-            <h2>Meet Our Team</h2>
-            <div class="slideshow-inner">
-                <div class="team-slideshow"> 
-                    <div class="slide is-active">
-                        <div class="image-container">
-                            <img src="{{ url_for('static', filename='img/team1.jpg') }}" alt="Team Member 1">
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="image-container">
-                            <img src="{{ url_for('static', filename='img/team2.jpg') }}" alt="Team Member 2">
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="image-container">
-                            <img src="{{ url_for('static', filename='img/team3.jpg') }}" alt="Team Member 3">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="arrows">
-                    <div class="arrow prev">
-                        <span class="svg svg-arrow-left">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26"> 
-                                <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> 
-                            </svg>
-                        </span>
-                    </div>
-
-                    <div class="arrow next">
-                        <span class="svg svg-arrow-right">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26"> 
-                                <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-1.023-0.391,0-1.414C0.488,0.098,0.744,0,1,0z"/> 
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section> 
     </div>   
+</section>
+
+<section id="mission-vision">
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/mission.png') }}" width="94px" alt="Mission Icon">
+        </div>
+        <h3>Our Mission</h3>
+        <p>Empowering clients through financial literacy and simplifying financial complexity.</p>
+        <p>⁠Innovating financial solutions with a delivering measurable results.</p>
+    </div>
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/vision.png') }}" width="95px" alt="Vision Icon">
+        </div>
+        <h3>Our Vision</h3>
+        <p>We aspire to be the best professional services firm by providing innovative 
+            and practical services to clients and aims to produce a multi-talented account expertise.</p>
+    </div>
+    <div class="mv-item">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='icons/value.png') }}" width="95px" alt="Value Icon">
+        </div>
+        <h3>Our Values</h3>
+        <p>Integrity, expertise, innovation, and continuous improvements in everything we do.</p>
+    </div>
 </section>
 
 <section id="our-leader">

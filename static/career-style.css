@@ -86,18 +86,17 @@
 
 #career-groups .cta-button {
     padding: 10px 20px;
-    background-color: #185ea4;
+    background-color: #a41867;
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
     margin-top: auto;
     width: 100%;
-
-    
+    border-radius: none;
 }
 
 #career-groups .cta-button:hover {
-    background-color: #0d407a;
+    background-color: #7a0d45;
 }
 
 #career-group {
@@ -109,7 +108,6 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Poppins', sans-serif;
 }
 
 #career-group h1 {
@@ -147,7 +145,6 @@
 
 .job-list-item {
     background-color: white;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
