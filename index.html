@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="La Whizz offers professional business solutions, including 
+                    business administration, human resources (HR), and bookkeeping services to help 
+                    your business thrive.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}La Whizz{% endblock %}</title>
+
+        <link rel="stylesheet" href="static/animation.css">
+        <link rel="stylesheet" href="static/general-style.css">
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='splash-style.css') }}"> -->
+        <link rel="stylesheet" href="static/navbar-style.css">
+        <link rel="stylesheet" href="static/footer-style.css">
+        <link rel="stylesheet" href="static/slideshow-style.css">
+        <link rel="stylesheet" href="static/about-style.css">
+        <link rel="stylesheet" href="static/services-style.css">
+        <link rel="stylesheet" href="static/missionvision-style.css">
+        <link rel="stylesheet" href="static/news-style.css">
+        <link rel="stylesheet" href="static/career-style.css">
+        <link rel="stylesheet" href="static/contact-style.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
+    </head>
+
+    <body class="{% if request.path == '/' %}homepage{% endif %}">
+        <!-- <div id="splash-screen" class="splash-screen"> 
+            <div class="logo-container"> 
+                <img src="{{ url_for('static', filename='icons/lw-logo-trans.png') }}" alt="La Whizz Company Logo">
+            </div>
+            <div class="motto-container"> 
+                <h1>Professional Services For Your Business</h1>
+            </div> 
+        </div> -->
+
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="icon-logo">
+                    <img src="static/icons/lw-logo-trans.png" 
+                        alt="La Whizz Company Logo"> 
+                </div>
+                <nav class="nav-list" aria-label="Main Navigation"> 
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Our Services</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/career">Career</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/proamitycorporate/" 
+                        target="_blank"><img src="static/icons/facebook.png" 
+                        alt="Follow us on Facebook"></a>
+                    <a href="https://www.instagram.com" 
+                        target="_blank"><img src="static/icons/instagram.png" 
+                        alt="Follow us on Instagram"></a>
+                    <a href="mailto:hrproamity@gmail.com">
+                        <img src="static/icons/email.png" alt="Email Us">
+                    </a>
+                    <a href="tel:0390553323">
+                        <img src="static/icons/phone.png" alt="Contact Us">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="wrapper">
+            <div id="main-content">
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-container">
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <div class="divider"></div>
+                        <ul>
+                            <li><a href="mailto:hrproamity@gmail.com">Email: hrproamity@gmail.com</a></li>
+                            <li><a href="tel:0390553323">Phone: 03-9055 3323</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Address</h3>
+                        <div class="divider"></div>
+                        <ul>
+                            <li><a href="https://maps.app.goo.gl/w56jxhQbW8vp8pcH6" 
+                                target="_blank">2-20, Tiara Mutiara, No. 139, Jalan Puchong, 58200 Kuala 
+                                Lumpur W.P. Kuala Lumpur Malaysia</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <div class="divider"></div>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/proamitycorporate/" target="_blank">
+                                <img src="static/icons/facebook.png" 
+                                    alt="Follow us on Facebook">
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="static/icons/instagram.png" 
+                                    alt="Follow us on Instagram">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Location</h3>
+                        <div class="divider"></div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.288264394161!2d101.64153907529783!3d3.075428441154486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b0084b80809%3A0xe24c24eca72bfe80!2s139%2C%20Jalan%20Puchong%2C%20Taman%20Kuchai%2C%2058200%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1729474066052!5m2!1sen!2smy" 
+                            width="300"
+                            height="200"
+                            style="border: 1px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const splashScreen = document.getElementById("splash-screen");
+            
+                // Clear sessionStorage on page reload
+                if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
+                    sessionStorage.clear();
+                }
+            
+                // Show splash screen only if not shown before
+                if (!sessionStorage.getItem('splashShown')) {
+                    splashScreen.style.display = "block";
+                    setTimeout(() => splashScreen.style.display = "none", 1500); // Adjust the time to 1.5 seconds
+                    sessionStorage.setItem('splashShown', 'true');
+                } else {
+                    splashScreen.style.display = "none";
+                }
+            });
+        </script> -->
+        
+    </body>
+</html>

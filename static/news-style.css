@@ -1,7 +1,7 @@
 /* News Categories Section */
 #news-page {
-    background: linear-gradient(to top left, #b9d7dd, #6077c8);
-    padding: 50px 0;
+    background: linear-gradient(to top left, #ffecf4, #c0aebe);
+    padding: 200px 0;
 }
 
 .news-carousel {
@@ -14,7 +14,6 @@
     font-size: 2.5rem;
     margin-bottom: 30px;
     margin-top: 0;
-    font-family: 'Poppins', sans-serif;
     color: #000000;
 }
 

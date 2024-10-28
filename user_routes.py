@@ -46,6 +46,10 @@ def home():
 def about():
     return render_template('about.html')
 
+@user_bp.route('/services')
+def services():
+    return render_template('services.html')
+
 #service routes
 @user_bp.route('/services/<service>')
 def service_detail(service):
@@ -55,6 +59,10 @@ def service_detail(service):
         return render_template('service-detail.html', service=service)
     else:
         return render_template('service-detail.html', service='not-found'), 404
+
+@user_bp.route('/events')
+def events():
+    return render_template('events.html')
 
 #career routes
 @user_bp.route('/career')

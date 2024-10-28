@@ -8,3 +8,6 @@ __pycache__/
 # Ignore database files
 *.db
 *.sqbpro
+
+templates/index.html
+
