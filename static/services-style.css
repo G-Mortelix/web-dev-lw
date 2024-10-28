@@ -3,7 +3,11 @@
 #services {
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
+    background-image: url('/static/img/services-bg2.png');
+
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
     padding: 200px 0px;
     align-items: center;
     flex-wrap: wrap;

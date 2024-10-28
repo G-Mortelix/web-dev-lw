@@ -1,11 +1,7 @@
 // Updated slide data with actual image URLs
 let slide_data = [
     {
-<<<<<<< HEAD
         'src': "{{ url_for('static', filename='img/slideshow/home-bg1.png') }}",
-=======
-        'src': "{{ url_for('static', filename='img/bg-pic.png') }}",
->>>>>>> 6c7e5e594c1446a7878e2efada573e3993c11de5
         'title': 'Slide Title 1',
         'copy': 'Description for slide 1.'
     },

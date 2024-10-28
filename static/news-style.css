@@ -1,11 +1,19 @@
 /* News Categories Section */
 #news-page {
-    background: linear-gradient(to top left, #ffecf4, #c0aebe);
-    padding: 200px 0;
+    background: linear-gradient(to top left, #e2c2cf, #fef5f5);
+}
+
+#news-page img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+#news-page .section-container {
+    padding: 70px 20px 100px 20px;
 }
 
 .news-carousel {
-    overflow: hidden;  /* Hide overflow to make a clean scroll effect */
+    overflow: hidden;  
     width: 100%;
     position: relative;
 }
@@ -15,9 +23,9 @@
     margin-bottom: 30px;
     margin-top: 0;
     color: #000000;
+    border-bottom: 1px dotted #000000;
 }
 
-/* News-specific pagination */
 .news-pagination {
     text-align: center;
     margin-top: 15px;
@@ -36,26 +44,26 @@
 }
 
 .news-dot.is-active {
-    background-color: #333;  /* Active dot color */
+    background-color: #333;  
 }
 
 .news-dot:hover {
-    background-color: #185ea4;  /* Hover color */
+    background-color: #185ea4;  
 }
 
 .news-grid {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    transition: transform 0.5s ease-in-out;  /* Smooth transition */
+    transition: transform 0.5s ease-in-out;  
 }
 
 .news-card {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;  /* Fixed width for cards */
-    flex-shrink: 0;  /* Prevent shrinking of cards */
+    width: 300px;  
+    flex-shrink: 0;  
     text-align: left;
     transition: box-shadow 0.3s ease;
 }
@@ -67,8 +75,8 @@
 }
 
 .news-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Stronger hover shadow */
-    transform: translateY(5px) 0.2s ease-in; /* Slight elevation effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); 
+    transform: translateY(5px) 0.2s ease-in; 
     transform: scale(1.003);
     transition: transform 0.2s ease;
 }
@@ -115,11 +123,11 @@
 }
 
 .news-tag.announcement {
-    background-color: #f35f36; /* Orange for announcements */
+    background-color: #f35f36; 
 }
 
 .news-tag.infomercial {
-    background-color: #1faf27; /* Green for infomercials */
+    background-color: #1faf27; 
 }
 
 
@@ -186,7 +194,7 @@
 
     .news-card {
         width: 100%;
-        max-width: 600px; /* Ensure the card doesn't stretch too wide on mobile */
+        max-width: 600px;
     }
 
     #news-detail .section-container {
@@ -203,13 +211,12 @@
 }
 
 
-/* Styling for placeholder cards */
 .placeholder {
-    opacity: 0.7; /* Slightly faded look for placeholders */
+    opacity: 0.7; 
 }
 
 .placeholder .news-image {
-    filter: grayscale(100%); /* Greyscale effect for the placeholder images */
+    filter: grayscale(100%); 
 }
 
 .placeholder h3 {
@@ -220,31 +227,30 @@
     color: #bbb;
 }
 
-/* Style for navigation arrows */
 .arrow {
     position: absolute;
     top: 50%;
     font-size: 2rem;
-    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: rgb(0, 0, 0);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 2;
     user-select: none;
-    transition: background-color 0.3s ease;  /* Smooth color transition */
+    transition: background-color 0.3s ease;  
 }
 
 .arrow-left {
-    left: 10px;  /* Adjust based on desired horizontal position */
+    left: 10px; 
 }
 
 .arrow-right {
-    right: 10px;  /* Adjust based on desired horizontal position */
+    right: 10px;  
 }
 
 .arrow:hover {
-    background-color: rgba(0, 0, 0, 0.7);  /* Darken background on hover */
+    background-color: rgba(0, 0, 0, 0.7);  
 }
 
 

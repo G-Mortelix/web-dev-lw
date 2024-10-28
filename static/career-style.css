@@ -11,18 +11,19 @@
 }
 
 #career-groups h1 {
-    font-size: 2.0rem;
-    margin-bottom: 20px;
+    font-size: 3.0rem;
+    margin-bottom: 30px;
 }
 
 #career-groups p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 20px;
     text-align: left;
 }
 
 #why-join-us {
     margin-bottom: 40px;
+    text-align: left;
 }
 
 #why-join-us h2 {
@@ -33,6 +34,7 @@
 #why-join-us ul {
     list-style-type: disc;
     margin-left: 0px;
+    
 }
 
 #why-join-us li {
@@ -47,6 +49,7 @@
     gap: 15px;
     flex-wrap: nowrap; 
     overflow-x: auto;
+    text-align: left;
 }
 
 .career-card-horizontal {
@@ -124,22 +127,22 @@
 
 .job-list-item ul {
     list-style: none;
-    padding-left: 25px;  /* Indent the bullet points */
-    color: #38393d;  /* Adjust text color */
+    padding-left: 25px;  
+    color: #38393d; 
 }
 
 .job-list-item li {
-    font-size: 1rem;  /* Adjust font size */
-    margin-bottom: 5px;  /* Add space between items */
+    font-size: 1rem;  
+    margin-bottom: 5px; 
 }
 
 .job-list-item ul li::before {
-    content: "\2022";  /* Unicode for bullet or use a custom icon */
-    color: #1faf27;  /* Customize the bullet color */
+    content: "\2022";  
+    color: #1faf27;  
     font-weight: bold;
     display: inline-block;
     width: 1.2em;
-    margin-left: -1em;  /* Position the bullet outside the text */
+    margin-left: -1em; 
 }
 
 
@@ -165,7 +168,7 @@
 .job-list-item .cta-button{
     display: inline-block;
     padding: 10px;
-    background-color: #185ea4;
+    background-color: #a41839;
     color: white;
     text-decoration: none;
     font-weight: bold;

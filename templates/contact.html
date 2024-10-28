@@ -6,35 +6,48 @@
 <section id="contact-us">
     <div class="section-container">
         <h1>Contact Us</h1>
-        <form action="/submit-inquiry" method="POST" id="contact-form">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        <p>Our Office</p>
+        <div class="contact-wrapper">
+            <div class="map-container">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.288264394161!2d101.64153907529783!3d3.075428441154486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b0084b80809%3A0xe24c24eca72bfe80!2s139%2C%20Jalan%20Puchong%2C%20Taman%20Kuchai%2C%2058200%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1729474066052!5m2!1sen!2smy" 
+                width="400"
+                height="300"
+                style="border: 1px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+            <form action="/submit-inquiry" method="POST" id="contact-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-            <div class="form-group">
-                <button type="submit" class="cta-button">Submit</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="cta-button">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 {% endblock %}
-
-

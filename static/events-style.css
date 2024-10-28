@@ -1,0 +1,107 @@
+#events {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(270deg, #f5ecee, #ffffff);
+    padding: 80px 0; 
+}
+
+#events .section-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+#events .section-container h1 {
+    font-size: 2.5rem;
+    color: #6c1d3e;
+    margin-bottom: 20px;
+}
+
+#events .section-container p {
+    font-size: 1.2rem;
+    color: #1d1b1b;
+    margin-bottom: 40px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Event Card Styling with Animations */
+.event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 250px;
+    padding: 20px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.6s ease forwards;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+.event-card:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+/* Hover effect for interactivity */
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.event-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Text Styling */
+.event-card h2 {
+    font-size: 1.2rem;
+    color: #6c1d3e;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1rem;
+    color: #1d1b1b;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 992px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Keyframes for the fade-in and scale-up animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

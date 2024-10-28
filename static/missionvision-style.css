@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     padding: 60px 20px;
-    background: linear-gradient(270deg, #f5ecee, #d5bbc9);
+    background: linear-gradient(270deg, #f5ecee, #ffffff);
     align-items: center;
     flex-wrap: wrap;
 }
@@ -15,22 +15,38 @@
     max-width: 300px;
     flex: 1 1 30%;
     margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Space out content to push description to the bottom */
+    max-width: 300px;
+    flex: 1 1 30%;
+    margin: 10px;
+    height: 300px;
 }
 
 
 .mv-item .icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #185ea4;
+    color: #a4185e;
 }
 
 .mv-item h3 {
     font-size: 1.8rem;
     color: #000000;
+    border-bottom: 1px dashed #3b1826;
 }
 
 .mv-item p {
     font-size: 1rem;
-    color: #333;
+    color: #0a0909;
+    font-weight: 500;
+}
+
+.mv-item .mv-description {
+    margin-top: auto; /* Pushes description to the bottom */
+    text-align: center;
 }
 
