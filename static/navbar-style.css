@@ -10,7 +10,7 @@
 
 .navbar {
     align-items: center;
-    background-color: rgba(245, 189, 189, 0.647); /* Slight opacity added */
+    background-color: rgba(255, 255, 255, 0.647); /* Slight opacity added */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between; 
@@ -41,7 +41,7 @@
 }
 
 .navbar .icon-logo img {
-    max-width: 120px;
+    max-width: 180px;
     height: auto;
 }
 

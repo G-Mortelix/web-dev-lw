@@ -126,62 +126,113 @@
   }
 }
 
-/*service-detail section*/
+/* Service Detail Section */
 #service-detail {
     background-image: url('/static/img/service-detail-bg.png');
-    padding: 210px 0;
+    padding: 150px 0;
     background-size: cover;
     background-position: center;
 }
 
 #service-detail .section-container {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 60PX;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
-    border-radius: 10px;
+    padding: 40px 60px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: justify;
     align-items: center;
 }
 
 #service-detail h1 {
-    font-size: 2rem;
-    font-weight: bolder;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4d2e55;
+    text-align: center;
+}
+
+.offer-section {
+    padding: 0 15px 0 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #831e35;
+    margin-bottom: 25px;
+}
+
+.offer-section h2 {
+    font-size: 1.8rem;
+    color: #831e35;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.offer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-section ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.offer-section ul li::before {
+    content: "•";
+    color: #831e35;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    top: -3px;
 }
 
 #service-detail p {
     font-size: 1rem;
-    color: #1d1b1b;
-    padding-bottom: 30px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 #service-detail .cta-button {
-    background-color: #831e35;
-    border: 0 solid #893b56;
-   
-    box-sizing: border-box;
-    color: #d9dee8;
-    cursor: pointer;
     display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
-    padding: 1rem 1.6rem;
+    background-color: #831e35;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
-    text-decoration: none #0d172a solid;
-    text-decoration-thickness: auto;
-    transition: all .1s cubic-bezier(.4, 0, .2, 1);
-    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    margin: 0 auto;
 }
 
 #service-detail .cta-button:hover {
-    background-color: #3b1e2c;
-    color: #fff;
+    background-color: #6e1930;
+    transform: translateY(-3px);
 }
+
+@media (max-width: 768px) {
+    #service-detail .section-container {
+        padding: 20px;
+    }
+
+    #service-detail h1 {
+        font-size: 2rem;
+    }
+
+    .offer-section h2 {
+        font-size: 1.6rem;
+    }
+
+    #service-detail .cta-button {
+        width: 100%;
+    }
+}
+
 
 

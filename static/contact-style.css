@@ -1,6 +1,6 @@
 /* Contact Us Section */
 #contact-us {
-    background-color: #f4f7fa;
+    background-color: rgba(244, 247, 250, 0);
     background-image: url('/static/img/contact-bg.png');
     padding: 60px 0;
     background-size: cover;
@@ -51,7 +51,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
+    background-color: rgba(255, 255, 255, 0.625); /* Semi-transparent white box */
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: left;

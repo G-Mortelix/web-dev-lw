@@ -4,28 +4,19 @@
 
 {% block content %}
 
-<div class="slideshow-container">
-    <div id="left-slider">
-        <!-- Dynamically added slides will appear here -->
-    </div>
-    <div id="slider-caption">
-        <div class="caption-heading"><h1>Slide Title 1</h1></div>
-        <div class="caption-subhead"><span>Description for slide 1.</span></div>
-    </div>
+<div class="video-background">
+    <video autoplay loop muted playsinline>
+        <source src="{{ url_for('static', filename='slideshow/slideshow-vid.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
 
-<script src="{{ url_for('static', filename='js/slideshow-jsstyle.js') }}"></script>
-<script>
+<!-- <script>
     jQuery(window).bind("load", function(){
-        // Remove any inline styles from the slides to avoid conflicts
         jQuery('#left-slider .slide').removeAttr('style');
-        
-        // Trigger a window resize event to recalculate layout
         jQuery(window).resize();
-        
-        // Ensure minimum height is set for each slide to make them visible
         jQuery('#left-slider .slide').attr('style', 'min-height:100vh;');
     });
-</script>
+</script> -->
 
 {% endblock %}

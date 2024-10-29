@@ -16,7 +16,9 @@
                     {% for article in articles %}
                     <div class="news-card">
                         <span class="news-tag {{ article.category | lower }}">{{ article.category }}</span>
-                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-image">
+                        <img src="{{ url_for('static', filename='img/news.png') }}" 
+                             alt="{{ article.title }}" class="news-image"
+                             style="filter: hue-rotate({{ loop.index * 20 }}deg) saturate(0.85) brightness(1);">
                         <div class="news-content">
                             <h3><a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">{{ article.title }}</a></h3>
                             <p>{{ article.content[:150] }}... 
@@ -24,36 +26,24 @@
                         </div>
                     </div>
                     {% endfor %}
-    
-                    <!--placeholder for empty spots-->
+            
+                    <!-- Placeholder cards for empty spots -->
                     {% for i in range(10 - articles|length) %}
                     <div class="news-card placeholder">
-                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="Coming Soon" class="news-image">
+                        <img src="{{ url_for('static', filename='img/news.png') }}" 
+                             alt="Coming Soon" class="news-image">
                         <div class="news-content">
                             <h3>Coming Soon</h3>
                             <p>New article will be available soon. Stay tuned for updates.</p>
                         </div>
                     </div>
                     {% endfor %}
-
-                    <!-- Clone the first news card to append at the end -->
-                    {% for article in articles[:3] %}
-                    <div class="news-card clone">
-                        <span class="news-tag {{ article.category | lower }}">{{ article.category }}</span>
-                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-image">
-                        <div class="news-content">
-                            <h3><a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">{{ article.title }}</a></h3>
-                            <p>{{ articles[0].content[:150] }}... 
-                            <a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">Read More</a></p>
-                        </div>
-                    </div>
-                    {% endfor %}
-
                 {% else %}
-                    <!-- If no articles are available, display 10 placeholders -->
+                    <!-- Display 10 placeholders if no articles are available -->
                     {% for i in range(10) %}
                     <div class="news-card placeholder">
-                        <img src="{{ url_for('static', filename='img/news.png') }}" alt="Coming Soon" class="news-image">
+                        <img src="{{ url_for('static', filename='img/news.png') }}" 
+                             alt="Coming Soon" class="news-image">
                         <div class="news-content">
                             <h3>Coming Soon</h3>
                             <p>New article will be available soon. Stay tuned for updates.</p>
@@ -62,6 +52,7 @@
                     {% endfor %}
                 {% endif %}
             </div>
+            
             <div class="arrow arrow-right">></div>
 
             <div class="news-pagination">

@@ -18,27 +18,25 @@
             </ul>
         </section>
 
+        {% set career_groups = [
+            {'name': 'Fresh Graduate', 'description': 'Begin your career with opportunities designed for fresh graduates.'},
+            {'name': 'Internship', 'description': 'Start your journey with hands-on experience through our internship programs.'},
+            {'name': 'Professional', 'description': 'Explore professional opportunities for experienced individuals.'},
+        ] %}
+
         <div class="career-grid-horizontal">
+            {% for career in career_groups %}
             <div class="career-card-horizontal">
-                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Fresh Graduate Icon" class="career-icon">
-                <h2>Fresh Graduate</h2>
-                <p>Begin your career with opportunities designed for fresh graduates.</p>
-                <a href="{{ url_for('user_bp.career_by_group', group='Fresh Graduate') }}" class="cta-button">View Jobs</a>
+                {% set hue_value = loop.index * 80 %}
+                <img src="{{ url_for('static', filename='icons/career-group.png') }}"
+                     alt="{{ career.name }} Icon"
+                     class="career-icon"
+                     style="filter: hue-rotate({{ hue_value }}deg) saturate(2) brightness(1.2);">
+                <h2>{{ career.name }}</h2>
+                <p>{{ career.description }}</p>
+                <a href="{{ url_for('user_bp.career_by_group', group=career.name) }}" class="cta-button">View Jobs</a>
             </div>
-
-            <div class="career-card-horizontal">
-                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Internship Icon" class="career-icon">
-                <h2>Internship</h2>
-                <p>Start your journey with hands-on experience through our internship programs.</p>
-                <a href="{{ url_for('user_bp.career_by_group', group='Internship') }}" class="cta-button">View Jobs</a>
-            </div>
-
-            <div class="career-card-horizontal">
-                <img src="{{ url_for('static', filename='icons/career-group.png') }}" alt="Professional Icon" class="career-icon">
-                <h2>Professional</h2>
-                <p>Explore professional opportunities for experienced individuals.</p>
-                <a href="{{ url_for('user_bp.career_by_group', group='Professional') }}" class="cta-button">View Jobs</a>
-            </div>        
+            {% endfor %}
         </div>
     </div>
 </section>

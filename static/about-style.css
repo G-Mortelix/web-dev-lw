@@ -50,8 +50,10 @@
 
 /* Our Leader Section */
 #our-leader {
-    background: linear-gradient(270deg, #f5ecee, #f7f7f7);
-    padding: 10px 0 80px 0;
+    padding: 1px 0 80px 0;
+    background: linear-gradient(270deg, #f5ecee, #ffffff);
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #our-leader .divider {

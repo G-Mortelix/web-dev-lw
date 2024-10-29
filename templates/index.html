@@ -10,10 +10,9 @@
 
         <link rel="stylesheet" href="{{ url_for('static', filename='animation.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='general-style.css') }}">
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='splash-style.css') }}"> -->
         <link rel="stylesheet" href="{{ url_for('static', filename='navbar-style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='footer-style.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='slideshow-style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='video-style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='about-style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='services-style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='missionvision-style.css') }}">
@@ -24,20 +23,11 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
     </head>
 
     <body class="{% if request.path == '/' %}homepage{% endif %}">
-        <!-- <div id="splash-screen" class="splash-screen"> 
-            <div class="logo-container"> 
-                <img src="{{ url_for('static', filename='icons/lw-logo-trans.png') }}" alt="La Whizz Company Logo">
-            </div>
-            <div class="motto-container"> 
-                <h1>Professional Services For Your Business</h1>
-            </div> 
-        </div> -->
-
         <header class="navbar">
             <div class="navbar-container">
                 <div class="icon-logo">
@@ -135,26 +125,5 @@
                 </div>
             </div>
         </footer>
-        
-        <!-- <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const splashScreen = document.getElementById("splash-screen");
-            
-                // Clear sessionStorage on page reload
-                if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
-                    sessionStorage.clear();
-                }
-            
-                // Show splash screen only if not shown before
-                if (!sessionStorage.getItem('splashShown')) {
-                    splashScreen.style.display = "block";
-                    setTimeout(() => splashScreen.style.display = "none", 1500); // Adjust the time to 1.5 seconds
-                    sessionStorage.setItem('splashShown', 'true');
-                } else {
-                    splashScreen.style.display = "none";
-                }
-            });
-        </script> -->
-        
     </body>
 </html>
