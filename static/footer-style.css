@@ -5,7 +5,6 @@
     width: 100%;
     margin-top: auto;
     line-height: 1.5;
-    display: flex; 
     overflow: hidden;
 }
 
@@ -102,3 +101,14 @@
 .footer-column .social-links a:hover {
     background-color: #e91e63;
 }
+
+.footer-copyright {
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle top border */
+}
+

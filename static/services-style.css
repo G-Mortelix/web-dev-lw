@@ -34,7 +34,6 @@
 
 #services .section-container {
     padding-bottom: 80px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 #services-detail .cta-button {
@@ -99,7 +98,6 @@
     color: #feebf6;
     cursor: pointer;
     display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;

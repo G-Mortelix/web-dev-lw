@@ -232,10 +232,9 @@
     position: absolute;
     top: 50%;
     font-size: 2rem;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0); 
     color: rgb(0, 0, 0);
     padding: 10px;
-    border-radius: 50%;
     cursor: pointer;
     z-index: 2;
     user-select: none;
@@ -251,7 +250,7 @@
 }
 
 .arrow:hover {
-    background-color: rgba(0, 0, 0, 0.7);  
+    background-color: rgba(93, 32, 54, 0.7);  
 }
 
 
