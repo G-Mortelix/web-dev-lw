@@ -29,7 +29,7 @@
     line-height: 2rem;
     color: black;
     text-align: justify;
-    font-weight: 600;
+    font-weight: 550;
     padding: 0 0 25px 0;
 }
 
@@ -93,7 +93,8 @@
 }
 
 .leader-profile p {
-    text-align: left;
+    text-align: justify;
+    line-height: 1.7rem;
 }
 
 .leader-name h3 {
@@ -106,6 +107,7 @@
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #000;
+    line-height: normal;
 }
 
 .leader-info p {
@@ -117,20 +119,20 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-.leader-profile {
-    flex-direction: column; /* Stack the image and text vertically */
-}
+    .leader-profile {
+        flex-direction: column; /* Stack the image and text vertically */
+    }
 
-.leader-info {
-    text-align: center; /* Center the text and image */
-}
+    .leader-info {
+        text-align: center; /* Center the text and image */
+    }
 
-.leader-info p {
-    font-size: 1rem;
-}
+    .leader-info p {
+        font-size: 1rem;
+    }
 
-.leader-image img {
-    width: 250px;
-    height: 250px;
-}
+    .leader-image img {
+        width: 250px;
+        height: 250px;
+    }
 }

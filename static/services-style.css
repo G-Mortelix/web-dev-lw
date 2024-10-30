@@ -132,16 +132,36 @@
     background-position: center;
 }
 
+#service-detail.bookkeeping {
+    background-image: url('/static/img/services-detail/bk-bg1f.png');
+}
+
+#service-detail.business-administration {
+    background-image: url('/static/img/services-detail/ba_bg1f.png');
+}
+
+#service-detail.human-resources {
+    background-image: url('/static/img/services-detail/hr-bg.png');
+}
+
+#service-detail {
+    padding: 150px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 #service-detail .section-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 60px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.806);
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: justify;
     align-items: center;
 }
+
 
 #service-detail h1 {
     font-size: 2.5rem;
@@ -152,7 +172,6 @@
 
 .offer-section {
     padding: 0 15px 0 15px;
-    background-color: #f9f9f9;
     border-left: 4px solid #831e35;
     margin-bottom: 25px;
 }
@@ -172,7 +191,7 @@
 
 .offer-section ul li {
     font-size: 1.1rem;
-    color: #333;
+    color: #191919;
     margin-bottom: 10px;
     padding-left: 1.5rem;
     position: relative;
@@ -189,7 +208,7 @@
 
 #service-detail p {
     font-size: 1rem;
-    color: #555;
+    color: #1a1a1a;
     line-height: 1.6;
     margin-bottom: 30px;
 }

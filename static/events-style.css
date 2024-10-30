@@ -8,19 +8,21 @@
 #events .section-container {
     max-width: 1200px;
     width: 100%;
-    text-align: center;
+    text-align: justify;
 }
 
 #events .section-container h1 {
     font-size: 2.5rem;
     color: #6c1d3e;
-    margin-bottom: 20px;
+    padding: 0 30px;
+    border-bottom: 1px dotted #6c1d3e;
 }
 
 #events .section-container p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #1d1b1b;
     margin-bottom: 40px;
+    font-weight: 500;
 }
 
 .events-grid {

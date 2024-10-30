@@ -3,7 +3,7 @@
 {% block title %}{{ service.title() }} Services{% endblock %}
 
 {% block content %}
-<section id="service-detail">
+<section id="service-detail" class="{{ service | lower }}">
     <div class="section-container">
         {% if service == 'bookkeeping' %}
             <h1>Book-keeping Services</h1>

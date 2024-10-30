@@ -9,12 +9,12 @@
         <h1>{{ article.title }}</h1>
 
         {% if article.image_url %}
-        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="news-detail-image">
+        <img src="{{ url_for('static', filename='img/' + article.image_url) }}" alt="{{ article.title }}" class="news-detail-image">
         {% else %}
         <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-detail-image">
         {% endif %}
 
-        <p>{{ article.content.replace('\n', '<br>') | safe }}</p>  <!-- Full news content -->
+        <p>{{ article.content.replace('\n', '<br>') | safe }}</p>
 
         <p><strong>Source:</strong> <a href="{{ article.source }}" target="_blank">Read the original information here</a></p>
     </div>
