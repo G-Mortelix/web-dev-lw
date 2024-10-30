@@ -10,12 +10,12 @@
 
 .navbar {
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.647); /* Slight opacity added */
+    background-color: rgba(255, 255, 255, 0.647);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between; 
-    min-height: 3rem;
-    overflow: hidden;
+    justify-content: space-between;
+    height: 4rem; /* Increase height slightly for better usability */
+    position: -webkit-sticky; /* Sticky behavior for Safari */
     position: sticky;
     top: 0;
     width: 100%;
@@ -62,6 +62,12 @@
 }
 
 /* Ensure nav items stack or shrink for smaller screens */
+@media screen and (max-width: 992px) {
+    .navbar-container {
+        padding: 0 1rem; /* Reduced padding on smaller screens */
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbar .nav-list ul {
         flex-direction: column;
@@ -69,8 +75,7 @@
     }
 
     .navbar .nav-list ul li {
-        margin-left: 0;
-        margin-bottom: 10px; /* Add spacing when items are stacked */
+        margin: 10px 0; /* Add spacing for vertical stacking */
     }
 }
 

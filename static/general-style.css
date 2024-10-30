@@ -8,8 +8,8 @@ body, html {
 }
 
 body {
-    background-image: url('/static/img/super-bg.png');
-    background-color: rgb(255, 255, 255);
+    /* background-image: url('/static/img/super-bg.png'); */
+    background-color: rgb(255, 245, 249);
     background-size: cover; 
     background-attachment: fixed; 
     background-position: center; 

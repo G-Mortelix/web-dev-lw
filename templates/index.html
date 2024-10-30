@@ -37,7 +37,7 @@
                 <nav class="nav-list" aria-label="Main Navigation"> 
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/about">About</a></li>
                         <li><a href="/services">Services</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/career">Career</a></li>
@@ -129,5 +129,29 @@
                 Copyrights © 2024 La Whizz Sdn. Bhd. All rights reserved. Registration Number: 1574211X / 202401028363
             </div>
         </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.overflowX = "hidden"; 
+            window.addEventListener("resize", adjustForZoomAndScroll);
+        
+            function adjustForZoomAndScroll() {
+                const body = document.body;
+                const html = document.documentElement;
+                const contentHeight = Math.max(
+                    body.scrollHeight, body.offsetHeight, 
+                    html.clientHeight, html.scrollHeight, html.offsetHeight
+                );
+        
+                if (contentHeight > window.innerHeight) {
+                    document.body.style.overflowY = "auto";
+                } else {
+                    document.body.style.overflowY = "hidden";
+                }
+            }
+        
+            adjustForZoomAndScroll();
+        });
+        </script>
     </body>
 </html>

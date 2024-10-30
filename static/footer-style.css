@@ -1,10 +1,23 @@
 .footer-section {
-    background: linear-gradient(135deg, #481d27, #5d1639); /* Keeps background */
-    color: #000000;
+    background: linear-gradient(135deg, #481d27, #5d1639);
+    color: #ffffff;
     text-align: left;
     width: 100%;
     margin-top: auto;
     line-height: 1.5;
+    position: relative; /* Ensure it stays at the bottom */
+    padding-bottom: 1rem;
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer-container {
@@ -20,17 +33,16 @@
     width: 22%;
 }
 
-/* Ensure columns adjust on smaller screens */
 @media screen and (max-width: 992px) {
     .footer-column {
-        width: 45%; /* Adjust columns for smaller screens */
-        margin-bottom: 30px;
+        width: 45%;
+        margin-bottom: 20px; 
     }
 }
 
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 576px) {
     .footer-column {
-        width: 100%;
+        width: 100%; 
     }
 }
 
@@ -99,15 +111,5 @@
 
 .footer-column .social-links a:hover {
     background-color: #e91e63;
-}
-
-.footer-copyright {
-    background-color: transparent; /* Transparent background */
-    color: #ffffff; /* White text color */
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.85rem;
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle top border */
 }
 

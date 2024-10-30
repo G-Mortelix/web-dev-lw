@@ -141,7 +141,7 @@
 .news-detail-image {
     width: 100%;
     max-width: 400px;
-    max-height: 300px;
+    max-height: 400px;
     height: auto;
     margin: 20px 0;
     object-fit: cover;

@@ -11,7 +11,7 @@
 }
 
 .mv-item {
-    text-align: center;
+    text-align: justify;
     max-width: 300px;
     flex: 1 1 30%;
     margin: 10px;
@@ -42,7 +42,7 @@
     font-size: 1rem;
     color: #0a0909;
     font-weight: 500;
-    padding: 10px 40px;
+    padding: 10px 30px;
 }
 
 .mv-item .mv-description {

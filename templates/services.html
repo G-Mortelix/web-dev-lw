@@ -4,37 +4,45 @@
 
 {% block content %}
 <section id="services">
-    <div class="service-container">
-        <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}">
-            <div class="icon">
-                <img src="{{ url_for('static', filename='icons/bookkeeping-icon.png') }}" alt="Bookkeeping Icon">
-            </div>
-        </a>
-        <h2>Book-keeping</h2>
-        <p>Keep your finances on track with ease.</p>
-        <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}" class="cta-button">Learn More</a>
+    <!-- Section header -->
+    <div class="section-header">
+        <h1>Our Services</h1>
     </div>
 
-    <div class="service-container">
-        <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}">
-            <div class="icon">
-                <img src="{{ url_for('static', filename='icons/businessadmin-icon.png') }}" alt="Business Administration Icon">
-            </div>
-        </a>
-        <h2>Business Administration</h2>
-        <p>Efficient management for your business.</p>
-        <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}" class="cta-button">Learn More</a>
-    </div>
+    <!-- Service cards container -->
+    <div class="service-cards">
+        <div class="service-container">
+            <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='icons/bookkeeping-icon.png') }}" alt="Book-keeping Icon">
+                </div>
+            </a>
+            <h2>Book-keeping</h2>
+            <p>Keep your finances on track with ease.</p>
+            <a href="{{ url_for('user_bp.service_detail', service='bookkeeping') }}" class="cta-button">Learn More</a>
+        </div>
 
-    <div class="service-container">
-        <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}">
-            <div class="icon">
-                <img src="{{ url_for('static', filename='icons/hr-icon.png') }}" alt="Human Resources Icon">
-            </div>
-        </a>
-        <h2>Human Resources</h2>
-        <p>Comprehensive HR services for your team.</p>
-        <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}" class="cta-button">Learn More</a>
+        <div class="service-container">
+            <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='icons/businessadmin-icon.png') }}" alt="Business Administration Icon">
+                </div>
+            </a>
+            <h2>Business Administration</h2>
+            <p>Efficient management for your business.</p>
+            <a href="{{ url_for('user_bp.service_detail', service='business-administration') }}" class="cta-button">Learn More</a>
+        </div>
+
+        <div class="service-container">
+            <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='icons/hr-icon.png') }}" alt="Human Resources Icon">
+                </div>
+            </a>
+            <h2>Human Resources</h2>
+            <p>Comprehensive HR services for your team.</p>
+            <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}" class="cta-button">Learn More</a>
+        </div>
     </div>
 </section>
 {% endblock %}

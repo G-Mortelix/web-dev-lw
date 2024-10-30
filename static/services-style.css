@@ -2,17 +2,37 @@
 
 #services {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     background-image: url('/static/img/services-bg2.png');
-
-    padding: 60px 0;
     background-size: cover;
     background-position: center;
-    padding: 200px 0px;
+    padding: 100px 0px;
     align-items: center;
     flex-wrap: wrap;
     margin: auto;
-    
+}
+
+/* Section header styling */
+#services .section-header {
+    margin-bottom: 40px;
+    color: #4d2e55;
+    text-align: center;
+}
+
+#services .section-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+#services .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #services .service-container {
