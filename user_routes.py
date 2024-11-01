@@ -109,12 +109,10 @@ def send_inquiry_email(name, user_email, subject, message):
     msg['Subject'] = f"Inquiry from {name}: {subject}"
     msg['Reply-To'] = user_email  
 
-    # Email body
     body = f"Name: {name}\nEmail: {user_email}\nSubject: {subject}\n\nMessage:\n{message}"
     msg.attach(MIMEText(body, 'plain'))
 
     try:
-        # Set up the SMTP server and send the email
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         server.login(SENDER_EMAIL, SENDER_PASSWORD)

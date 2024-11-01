@@ -8,65 +8,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}La Whizz{% endblock %}</title>
 
-        <link rel="stylesheet" href="static/animation.css">
-        <link rel="stylesheet" href="static/general-style.css">
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='splash-style.css') }}"> -->
-        <link rel="stylesheet" href="static/navbar-style.css">
-        <link rel="stylesheet" href="static/footer-style.css">
-        <link rel="stylesheet" href="static/slideshow-style.css">
-        <link rel="stylesheet" href="static/about-style.css">
-        <link rel="stylesheet" href="static/services-style.css">
-        <link rel="stylesheet" href="static/missionvision-style.css">
-        <link rel="stylesheet" href="static/news-style.css">
-        <link rel="stylesheet" href="static/career-style.css">
-        <link rel="stylesheet" href="static/contact-style.css">
+        <link rel="stylesheet" href="/static/animation.css">
+        <link rel="stylesheet" href="/static/navbar-style.css">
+        <link rel="stylesheet" href="/static/footer-style.css">
+        <link rel="stylesheet" href="/static/video-style.css">
+        <link rel="stylesheet" href="/static/about-style.css">
+        <link rel="stylesheet" href="/static/services-style.css">
+        <link rel="stylesheet" href="/static/missionvision-style.css">
+        <link rel="stylesheet" href="/static/events-style.css">
+        <link rel="stylesheet" href="/static/news-style.css">
+        <link rel="stylesheet" href="/static/career-style.css">
+        <link rel="stylesheet" href="/static/contact-style.css">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
     </head>
 
     <body class="{% if request.path == '/' %}homepage{% endif %}">
-        <!-- <div id="splash-screen" class="splash-screen"> 
-            <div class="logo-container"> 
-                <img src="{{ url_for('static', filename='icons/lw-logo-trans.png') }}" alt="La Whizz Company Logo">
-            </div>
-            <div class="motto-container"> 
-                <h1>Professional Services For Your Business</h1>
-            </div> 
-        </div> -->
-
         <header class="navbar">
             <div class="navbar-container">
                 <div class="icon-logo">
-                    <img src="static/icons/lw-logo-trans.png" 
+                    <img src="/static/icons/lw-logo-trans.png" 
                         alt="La Whizz Company Logo"> 
                 </div>
                 <nav class="nav-list" aria-label="Main Navigation"> 
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/services">Our Services</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
                         <li><a href="/events">Events</a></li>
-                        <li><a href="/news">News</a></li>
                         <li><a href="/career">Career</a></li>
+                        <li><a href="/news">News</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
 
                 <div class="social-icons">
                     <a href="https://www.facebook.com/proamitycorporate/" 
-                        target="_blank"><img src="static/icons/facebook.png" 
+                        target="_blank"><img src="/static/icons/facebook.png" 
                         alt="Follow us on Facebook"></a>
                     <a href="https://www.instagram.com" 
-                        target="_blank"><img src="static/icons/instagram.png" 
+                        target="_blank"><img src="/static/icons/instagram.png" 
                         alt="Follow us on Instagram"></a>
                     <a href="mailto:hrproamity@gmail.com">
-                        <img src="static/icons/email.png" alt="Email Us">
+                        <img src="/static/icons/email.png" alt="Email Us">
                     </a>
                     <a href="tel:0390553323">
-                        <img src="static/icons/phone.png" alt="Contact Us">
+                        <img src="/static/icons/phone.png" alt="Contact Us">
                     </a>
                 </div>
             </div>
@@ -108,7 +98,7 @@
                         <div class="divider"></div>
                         <div class="social-links">
                             <a href="https://www.facebook.com/proamitycorporate/" target="_blank">
-                                <img src="static/icons/facebook.png" 
+                                <img src="/static/icons/facebook.png" 
                                     alt="Follow us on Facebook">
                             </a>
                             <a href="https://www.instagram.com" target="_blank">
@@ -133,27 +123,34 @@
                     </div>
                 </div>
             </div>
+
+            <div class="footer-copyright">
+                Copyrights © 2024 La Whizz Sdn. Bhd. All rights reserved. Registration Number: 1574211X / 202401028363
+            </div>
         </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.overflowX = "hidden"; 
+            window.addEventListener("resize", adjustForZoomAndScroll);
         
-        <!-- <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const splashScreen = document.getElementById("splash-screen");
-            
-                // Clear sessionStorage on page reload
-                if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
-                    sessionStorage.clear();
-                }
-            
-                // Show splash screen only if not shown before
-                if (!sessionStorage.getItem('splashShown')) {
-                    splashScreen.style.display = "block";
-                    setTimeout(() => splashScreen.style.display = "none", 1500); // Adjust the time to 1.5 seconds
-                    sessionStorage.setItem('splashShown', 'true');
+            function adjustForZoomAndScroll() {
+                const body = document.body;
+                const html = document.documentElement;
+                const contentHeight = Math.max(
+                    body.scrollHeight, body.offsetHeight, 
+                    html.clientHeight, html.scrollHeight, html.offsetHeight
+                );
+        
+                if (contentHeight > window.innerHeight) {
+                    document.body.style.overflowY = "auto";
                 } else {
-                    splashScreen.style.display = "none";
+                    document.body.style.overflowY = "hidden";
                 }
-            });
-        </script> -->
+            }
         
+            adjustForZoomAndScroll();
+        });
+        </script>
     </body>
 </html>
