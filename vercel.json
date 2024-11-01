@@ -1,6 +1,0 @@
-{
-  "public": "./",
-  "builds": [
-    { "src": "templates/index.html", "use": "@vercel/static" }
-  ]
-}
