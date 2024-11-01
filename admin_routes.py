@@ -114,7 +114,7 @@ def edit_job(job_uuid):
         flash('Job not found!', 'error')
         return redirect(url_for('admin_bp.manage_jobs'))
 
-    job = jobs[job_index]  # Get job details
+    job = jobs[job_index]
 
     try:
         job['Post Date'] = datetime.strptime(job['Post Date'], '%d/%m/%Y').strftime('%Y-%m-%d')
@@ -122,7 +122,7 @@ def edit_job(job_uuid):
         job['Post Date'] = job['Post Date']
 
     if request.method == 'POST':
-        # Update the job details
+        
         title = request.form['title']
         description = request.form['description']
         requirements = request.form['requirements']
@@ -132,7 +132,6 @@ def edit_job(job_uuid):
         post_date = request.form['post_date']
         notes = request.form['notes']
 
-        # Update the row with new data
         sheet_jobposition.update(f'A{job_index + 2}', [[job_uuid, title, description, requirements, group, location, status, post_date, notes]])
 
         return redirect(url_for('admin_bp.manage_jobs'))
@@ -145,7 +144,6 @@ def edit_job(job_uuid):
 def delete_job(job_uuid):
     jobs = sheet_jobposition.get_all_records()
     
-    # Find the row with the matching UUID
     row_to_delete = None
     for idx, job in enumerate(jobs, start=2):  
         if job['UUID'] == job_uuid:
@@ -167,21 +165,18 @@ def view_applications():
     applications = sheet_jobapplicants.get_all_records()  
 
     for app in applications:
-        contact_number = str(app.get('Contact Number', ''))
         ic_number = str(app.get('IC Number', ''))
+        contact_number = str(app.get('Contact Number', ''))
 
-        # Fix Contact Number (prepend '0' if necessary)
+        if len(ic_number) > 1 and not ic_number.startswith("0"):
+                    ic_number = "0" + ic_number
+
         if (len(contact_number) == 9 or len(contact_number) == 10) and not contact_number.startswith("0"):
             contact_number = "0" + contact_number
 
-        # Fix IC Number (do not add an extra '0' if it already starts with '0')
-        if len(ic_number) > 1 and not ic_number.startswith("0"):
-            ic_number = "0" + ic_number
-
-        app['Contact Number'] = contact_number
         app['IC Number'] = ic_number
-
-        # Format the date if necessary
+        app['Contact Number'] = contact_number
+        
         date_submitted = app.get('Timestamp')
         if date_submitted:
             try:

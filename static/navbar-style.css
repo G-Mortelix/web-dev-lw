@@ -64,7 +64,7 @@
 /* Ensure nav items stack or shrink for smaller screens */
 @media screen and (max-width: 992px) {
     .navbar-container {
-        padding: 0 1rem; /* Reduced padding on smaller screens */
+        padding: 0 1rem; 
     }
 }
 

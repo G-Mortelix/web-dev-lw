@@ -75,8 +75,7 @@
 }
 
 #services .service-container:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Increase shadow on hover */
-    background-color: rgb(236, 240, 244);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
     transform: translateY(-5px);  /* Slight lift on hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
