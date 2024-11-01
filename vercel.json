@@ -6,7 +6,17 @@
     ],
     "routes": [
       { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/templates/(.*)", "dest": "/templates/$1" },
+      { "src": "/about", "dest": "/templates/about.html" },
+      { "src": "/career/<string:group>", "dest": "/templates/career-group.html" },
+      { "src": "/career", "dest": "/templates/career.html" },
+      { "src": "/contact", "dest": "/templates/contact.html" },
+      { "src": "/events", "dest": "/templates/events.html" },
+      { "src": "/", "dest": "/templates/home.html" },
+      { "src": "/news/<int:news_id>", "dest": "/templates/news-detail.html" },
+      { "src": "/news", "dest": "/templates/news.html" },
+      { "src": "/services/<service>", "dest": "/templates/service-detail.html" },
+      { "src": "/services", "dest": "/templates/services.html" },
+      { "src": "/admin/(.*)", "dest": "/templates/admin/$1" },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
