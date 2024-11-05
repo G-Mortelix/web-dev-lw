@@ -1,5 +1,3 @@
-/* services.css */
-
 #services {
     display: flex;
     flex-direction: column;
@@ -13,7 +11,6 @@
     margin: auto;
 }
 
-/* Section header styling */
 #services .section-header {
     margin-bottom: 40px;
     color: #4d2e55;
@@ -41,15 +38,14 @@
     max-width: 250px;
     flex: 1 1 30%;
 
-    flex-direction: column;  /* Stack items vertically */
-    justify-content: space-between;  /* Push button to the bottom */
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     padding: 15px;
-    background-color: white;  /* Add background color for card look */
-    border-radius: 10px;  /* Slightly rounded corners for card effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a 3D effect */
-    height: 340px;  /* Ensure equal height cards */
-    
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 340px;  
 }
 
 #services .section-container {
@@ -76,7 +72,7 @@
 
 #services .service-container:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
-    transform: translateY(-5px);  /* Slight lift on hover */
+    transform: translateY(-5px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -94,19 +90,6 @@
 #services p {
     font-size: 1rem;
     color: #1d1b1b;
-}
-
-@media (max-width: 768px) {
-    #services,
-    #mission-vision {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-    }
-
-    #services .service-container,
-    .mv-item {
-        max-width: 100%; /* Allow full width on smaller screens */
-        flex: 1 1 100%;
-    }
 }
 
 #services .cta-button {
@@ -252,7 +235,27 @@
     transform: translateY(-3px);
 }
 
+/*responsive design*/
+/*adjustments for tablet*/
 @media (max-width: 768px) {
+    #services,
+    #mission-vision {
+        flex-direction: column;
+    }
+
+    #services .service-container {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    #services .section-header h1 {
+        font-size: 2rem;
+    }
+
+    #services h2 {
+        font-size: 1.3rem;
+    }
+
     #service-detail .section-container {
         padding: 20px;
     }
@@ -266,9 +269,42 @@
     }
 
     #service-detail .cta-button {
-        width: 100%;
+        width: 100%; 
     }
 }
 
+/*adjustments for phones*/
+@media (max-width: 576px) {
+    #services .service-cards {
+        gap: 15px; 
+    }
+
+    #services .service-container {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    #services .section-header h1 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    #services h2 {
+        font-size: 1.2rem;
+    }
+
+    #services p {
+        font-size: 0.9rem; 
+    }
+
+    .icon {
+        font-size: 2.5rem; 
+    }
+
+    #service-detail .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
 
 

@@ -1,8 +1,14 @@
 #contact-us {
     background-color: rgba(227, 208, 220, 0);
-    padding: 60px 0;
     background-size: cover;
     background-position: center;
+}
+
+#contact-us img {
+    width: 100%; 
+    height: auto; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    object-fit: cover; 
 }
 
 .contact-wrapper {
@@ -28,30 +34,14 @@
     margin-bottom: 0;
 }
 
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
-    }
-
-    .cta-button {
-        width: 100%;
-    }
-
-    #contact-us h1 {
-        font-size: 2rem;
-    }
-}
-
 #contact-us .section-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.625); /* Semi-transparent white box */
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.625); 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: left;
+    width: 90%;
 }
 
 #contact-us h1 {
@@ -84,7 +74,7 @@
 }
 
 .form-group input, 
-.form-group textarea {
+.form-group textarea { 
     padding: 12px 15px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -101,7 +91,7 @@
     outline: none;  
 }
 
-.cta-button {
+#contact-us .cta-button {
     padding: 15px 30px;
     background-color: #680c34;
     color: white;
@@ -110,12 +100,12 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 200px;
+    width: 30%;
     text-align: center;
     align-self: center;
 }
 
-.cta-button:hover {
+#contact-us .cta-button:hover {
     background-color: #7a0d31;
 }
 
@@ -153,7 +143,72 @@
         font-size: 2rem;
     }
 
-    .cta-button {
+    #contact-us .cta-button {
         width: 100%; /* Full width on mobile */
+    }
+}
+
+/*responsive adjustments on tablet*/
+@media (max-width: 768px) {
+    
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #contact-us .section-container {
+        padding: 20px; 
+    }
+
+    #contact-us h1 {
+        font-size: 2rem; 
+    }
+
+    #contact-us .cta-button {
+        width: 100%; 
+        font-size: 1.1rem;
+    }
+
+    .map-container iframe {
+        width: 100%; 
+        height: 250px; 
+    }
+}
+
+/*responsive adjustments on phones*/
+@media (max-width: 576px) {
+    #contact-us {
+        padding: 40px 0; 
+    }
+
+    .contact-wrapper {
+        gap: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    #contact-us h1 {
+        font-size: 1.8rem; 
+    }
+
+    #contact-us p {
+        font-size: 1.4rem; 
+    }
+
+    .map-container {
+        height: 200px; 
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px; 
+        font-size: 1rem; 
+    }
+
+    .cta-button {
+        width: 100%; 
+        font-size: 1rem; 
     }
 }

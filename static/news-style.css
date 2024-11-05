@@ -13,7 +13,7 @@
 }
 
 .news-carousel {
-    overflow: hidden;  
+    overflow-x: hidden;  
     width: 100%;
     position: relative;
 }
@@ -131,11 +131,51 @@
     background-color: #1faf27; 
 }
 
+.placeholder {
+    opacity: 0.7; 
+}
+
+.placeholder .news-image {
+    filter: grayscale(100%); 
+}
+
+.placeholder h3 {
+    color: #888; /* Lighter text color for "Coming Soon" */
+}
+
+.placeholder p {
+    color: #bbb;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition: background-color 0.3s ease;  
+}
+
+.arrow-left {
+    left: 10px; 
+}
+
+.arrow-right {
+    right: 10px;  
+}
+
+.arrow:hover {
+    background-color: rgba(93, 32, 54, 0.7);  
+}
+
 
 /* News Detail Section */
 #news-detail {
     background: white;
-    padding: 50px 0;
+    padding: 50px 20px;
 }
 
 .news-detail-image {
@@ -186,7 +226,8 @@
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/*responsive design*/
+/*adjustments for tablets*/
 @media (max-width: 768px) {
     .news-grid {
         flex-direction: column;
@@ -198,59 +239,74 @@
         max-width: 600px;
     }
 
-    #news-detail .section-container {
-        padding: 20px;
-    }
-
-    #news-detail h1 {
+    #news-page h1, #news-detail h1 {
         font-size: 2rem;
     }
 
-    #news-detail p {
+    .news-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .news-content p, #news-detail p {
         font-size: 1rem;
+    }
+
+    .arrow {
+        font-size: 1.8rem;
+    }
+
+    .news-dot {
+        width: 10px;
+        height: 10px;
     }
 }
 
+/*adjustments for phone*/
+@media (max-width: 576px) {
+    #news-page .section-container {
+        padding: 30px 15px;
+    }
 
-.placeholder {
-    opacity: 0.7; 
+    .news-card {
+        width: 90%; 
+    }
+
+    #news-page h1, #news-detail h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .news-grid {
+        gap: 15px; 
+    }
+
+    .news-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .news-content p {
+        font-size: 0.9rem;
+    }
+
+    .news-card img {
+        height: 180px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+
+    .news-pagination {
+        gap: 8px;
+    }
+
+    .news-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        display: none; 
+    }
 }
-
-.placeholder .news-image {
-    filter: grayscale(100%); 
-}
-
-.placeholder h3 {
-    color: #888; /* Lighter text color for "Coming Soon" */
-}
-
-.placeholder p {
-    color: #bbb;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 2rem;
-    background-color: rgba(0, 0, 0, 0); 
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    user-select: none;
-    transition: background-color 0.3s ease;  
-}
-
-.arrow-left {
-    left: 10px; 
-}
-
-.arrow-right {
-    right: 10px;  
-}
-
-.arrow:hover {
-    background-color: rgba(93, 32, 54, 0.7);  
-}
-
-

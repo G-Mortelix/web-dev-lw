@@ -18,7 +18,7 @@
 }
 
 #about-us h2 {
-    font-size: 2.7rem;
+    font-size: 2.3rem;
     margin: 30px 0;
     margin-left: 17%;
     color: black;
@@ -50,7 +50,7 @@
 
 /* Our Leader Section */
 #our-leader {
-    padding: 1px 0 80px 0;
+    padding: 50px 0 80px 0;
     background: linear-gradient(270deg, #f5ecee, #ffffff);
     align-items: center;
     flex-wrap: wrap;
@@ -72,8 +72,8 @@
 }
 
 #our-leader h2 {
-    font-size: 2.7rem;
-    margin: 100px 0 30px 0;
+    font-size: 2rem;
+    margin: 50px 0 30px;
     margin-left: 17%;
     color: black;
 }
@@ -98,13 +98,13 @@
 }
 
 .leader-name h3 {
-    font-size: 2.3rem;
+    font-size: 1.6rem;
     margin-top: 0;
     color: #000;
 }
 
 .leader-name p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
     color: #000;
     line-height: normal;
@@ -117,22 +117,45 @@
     color: #000000;
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
+    #about-us h2 {
+        font-size: 2rem; 
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    #about-us p {
+        font-size: 0.9rem; 
+        line-height: 1.8rem;
+    }
+
     .leader-profile {
-        flex-direction: column; /* Stack the image and text vertically */
+        flex-direction: column; 
+        align-items: center;
     }
 
     .leader-info {
-        text-align: center; /* Center the text and image */
+        text-align: center;
+    }
+
+    .leader-profile img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .leader-name h3 {
+        font-size: 1.8rem;
     }
 
     .leader-info p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.6rem;
     }
 
-    .leader-image img {
-        width: 250px;
-        height: 250px;
+    #our-leader h2 {
+        font-size: 2rem;
+        margin: 50px 0 30px;
+        text-align: center;
     }
 }

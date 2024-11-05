@@ -1,11 +1,11 @@
 .footer-section {
-    background: linear-gradient(135deg, #481d27, #5d1639);
+    background: linear-gradient(135deg, #663046, #5d1631);
     color: #ffffff;
     text-align: left;
     width: 100%;
     margin-top: auto;
     line-height: 1.5;
-    position: relative; /* Ensure it stays at the bottom */
+    position: relative;
     padding-bottom: 1rem;
 }
 
@@ -31,19 +31,6 @@
 .footer-column {
     flex-basis: 20%;
     width: 22%;
-}
-
-@media screen and (max-width: 992px) {
-    .footer-column {
-        width: 45%;
-        margin-bottom: 20px; 
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .footer-column {
-        width: 100%; 
-    }
 }
 
 .footer-column .divider {
@@ -113,3 +100,42 @@
     background-color: #e91e63;
 }
 
+/* Footer Adjustments for Responsiveness */
+
+@media screen and (max-width: 992px) {
+    .footer-column {
+        width: 45%;
+        margin-bottom: 20px; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns on small screens */
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center; /* Center-align text */
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+        font-size: 1rem;
+    }
+
+    .footer-column ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-column .social-links {
+        justify-content: center; /* Center social icons */
+    }
+
+    .footer-column .social-links a {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+    }
+}

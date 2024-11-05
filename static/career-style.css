@@ -47,7 +47,7 @@
     justify-content: space-around;
     align-items: stretch;
     gap: 15px;
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
     overflow-x: auto;
     text-align: left;
 }
@@ -57,7 +57,6 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 250px;
     max-width: 200px;
     transition: box-shadow 0.3s ease;
 
@@ -93,8 +92,9 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
     margin-top: auto;
-    width: 100%;
+    width: 80%;
     border-radius: none;
+    text-align: center;
 }
 
 #career-groups .cta-button:hover {
@@ -186,9 +186,81 @@
     margin: 0px;
 }
 
-/* Mobile Responsive */
+/*responsive*/
+/*adjustments for tablets*/
 @media (max-width: 768px) {
-    .job-item {
+    .career-grid-horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .career-card-horizontal {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #career-groups h1, #career-group h1 {
+        font-size: 2.5rem;
+    }
+
+    #career-groups p, #career-group p {
+        font-size: 1.1rem;
+    }
+
+    .career-card-horizontal h2 {
+        font-size: 1.5rem;
+    }
+
+    #career-groups .cta-button,
+    .job-list-item .cta-button {
+        font-size: 1rem;
+        width: 40%;
+    }
+}
+
+/*adjustments for phone*/
+@media (max-width: 576px) {
+    .career-grid-horizontal {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .career-card-horizontal {
+        width: 90%; 
+    }
+
+    #career-groups h1, #career-group h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #career-groups p, #career-group p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .career-card-horizontal h2 {
+        font-size: 1.3rem;
+    }
+
+    .career-card-horizontal p {
+        font-size: 0.95rem;
+    }
+
+    .career-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    #career-groups .cta-button,
+    .job-list-item .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+        width: 40%;
+    }
+
+    .job-list-item {
         padding: 15px;
     }
 }

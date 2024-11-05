@@ -33,7 +33,6 @@
     padding: 0 20px;
 }
 
-/* Event Card Styling with Animations */
 .event-card {
     display: flex;
     flex-direction: column;
@@ -56,13 +55,11 @@
     animation-delay: 0.4s;
 }
 
-/* Hover effect for interactivity */
 .event-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styling */
 .event-card img {
     width: 100%;
     height: 150px;
@@ -71,7 +68,6 @@
     margin-bottom: 15px;
 }
 
-/* Text Styling */
 .event-card h2 {
     font-size: 1.2rem;
     color: #6c1d3e;
@@ -83,20 +79,60 @@
     color: #1d1b1b;
 }
 
-/* Responsive Design for Smaller Screens */
+/*adjustments for tablets*/
 @media (max-width: 992px) {
     .events-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    #events .section-container h1 {
+        font-size: 2rem; 
+    }
+
+    #events .section-container p {
+        font-size: 1rem; 
     }
 }
 
+/*adjustments for phone*/
 @media (max-width: 576px) {
     .events-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .event-card {
+        max-width: 100%; 
+        padding: 15px;
+    }
+
+    #events .section-container h1 {
+        font-size: 1.8rem; 
+        text-align: center; 
+        padding: 0 10px;
+    }
+
+    #events .section-container p {
+        font-size: 0.95rem; 
+        text-align: center;
+    }
+
+    .event-card h2 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .event-card p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+
+    .event-card img {
+        height: 140px; 
     }
 }
 
-/* Keyframes for the fade-in and scale-up animation */
 @keyframes fadeInScale {
     0% {
         opacity: 0;

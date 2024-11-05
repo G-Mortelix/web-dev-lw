@@ -34,6 +34,13 @@
                     <img src="{{ url_for('static', filename='icons/lw-logo-trans.png') }}" 
                         alt="La Whizz Company Logo"> 
                 </div>
+
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                
                 <nav class="nav-list" aria-label="Main Navigation"> 
                     <ul>
                         <li><a href="/">Home</a></li>
@@ -50,7 +57,7 @@
                     <a href="https://www.facebook.com/proamitycorporate/" 
                         target="_blank"><img src="{{ url_for('static', filename='icons/facebook.png') }}" 
                         alt="Follow us on Facebook"></a>
-                    <a href="https://www.instagram.com" 
+                    <a href="https://www.instagram.com/lawhizz_/" 
                         target="_blank"><img src="{{ url_for('static', filename='icons/instagram.png') }}" 
                         alt="Follow us on Instagram"></a>
                     <a href="mailto:admn.lwz@gmail.com">
@@ -102,7 +109,7 @@
                                 <img src="{{ url_for('static', filename='icons/facebook.png') }}" 
                                     alt="Follow us on Facebook">
                             </a>
-                            <a href="https://www.instagram.com" target="_blank">
+                            <a href="https://www.instagram.com/lawhizz_/" target="_blank">
                                 <img src="{{ url_for('static', filename='icons/instagram.png') }}" 
                                     alt="Follow us on Instagram">
                             </a>
@@ -130,28 +137,35 @@
             </div>
         </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.style.overflowX = "hidden"; 
-            window.addEventListener("resize", adjustForZoomAndScroll);
-        
-            function adjustForZoomAndScroll() {
-                const body = document.body;
-                const html = document.documentElement;
-                const contentHeight = Math.max(
-                    body.scrollHeight, body.offsetHeight, 
-                    html.clientHeight, html.scrollHeight, html.offsetHeight
-                );
-        
-                if (contentHeight > window.innerHeight) {
-                    document.body.style.overflowY = "auto";
-                } else {
-                    document.body.style.overflowY = "hidden";
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Prevent horizontal overflow
+                document.body.style.overflowX = "hidden"; 
+
+                // Toggle mobile menu
+                function toggleMenu() {
+                    const navList = document.querySelector('.nav-list');
+                    navList.classList.toggle('active'); 
+                    
+                    // Disable body scroll when menu is open
+                    if (navList.classList.contains('active')) {
+                        document.body.style.overflowY = "hidden";
+                    } else {
+                        document.body.style.overflowY = "auto";
+                    }
                 }
-            }
-        
-            adjustForZoomAndScroll();
-        });
+
+                // Attach click event to hamburger icon
+                document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+
+                // Close menu when clicking on a link in the dropdown
+                document.querySelectorAll('.nav-list ul li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        document.querySelector('.nav-list').classList.remove('active');
+                        document.body.style.overflowY = "auto"; // Re-enable body scroll
+                    });
+                });
+            });
         </script>
     </body>
 </html>
