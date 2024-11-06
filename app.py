@@ -4,7 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
-from extensions import db, mail
+from extensions import db, mail, migrate
 from user_routes import user_bp
 from admin_routes import Admin, admin_bp, init_app as admin_init_app
 from model_db import News, Inquiry, Admin
@@ -22,23 +22,18 @@ if not app.secret_key:
 app.register_blueprint(user_bp)
 app.register_blueprint(admin_bp)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('db_url')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('db_url_mysql')
 if not app.config['SQLALCHEMY_DATABASE_URI']:
     raise ValueError("No database URL set for Flask application")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)  
-
-with app.app_context():
-    db.create_all()
+migrate.init_app(app, db)
 
 csrf = CSRFProtect(app)
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'admin_bp.admin_login'
-
-with app.app_context():
-    db.create_all()
 
 admin_init_app(app)
 

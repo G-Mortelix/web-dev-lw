@@ -1,0 +1,2 @@
+id,username,password_hash,role
+1,lw-admin,scrypt:32768:8:1$lcW3NAOCAhVqLufd$b0509b7b0199a427ebe8bb0641ec813597e2ac6da2e91308d8e78eebd4ac263bc29d1e8c50339a41f18e074cfc9506eb33b06200d689d6a438d5e1f45618b7d2,admin
