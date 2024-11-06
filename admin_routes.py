@@ -10,10 +10,12 @@ from extensions import db
 from model_db import Admin, News, Inquiry, get_inquiries, get_inquiry_by_id
 from dotenv import load_dotenv
 from functools import wraps
+from redis import Redis
 
 admin_bp = Blueprint('admin_bp', __name__)
 
-limiter = Limiter(key_func=get_remote_address)
+limiter_storage_uri = os.getenv('limiter_storage_uri')
+limiter = Limiter(key_func=get_remote_address, storage_uri=limiter_storage_uri)
 
 g_credpath = os.getenv('g_api_cred')
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
