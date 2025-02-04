@@ -27,8 +27,10 @@ if not app.config['SQLALCHEMY_DATABASE_URI']:
     raise ValueError("No database URL set for Flask application")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)  
+db.init_app(app)
 migrate.init_app(app, db)
+
+application = app
 
 csrf = CSRFProtect(app)
 

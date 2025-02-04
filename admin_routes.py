@@ -14,8 +14,8 @@ from redis import Redis
 
 admin_bp = Blueprint('admin_bp', __name__)
 
-limiter_storage_uri = os.getenv('limiter_storage_uri')
-limiter = Limiter(key_func=get_remote_address, storage_uri=limiter_storage_uri)
+# limiter_storage_uri = os.getenv('limiter_storage_uri')
+limiter = Limiter(key_func=get_remote_address)
 
 g_credpath = os.getenv('g_api_cred')
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
