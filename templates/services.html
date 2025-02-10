@@ -4,9 +4,21 @@
 
 {% block content %}
 <section id="services">
-    <!-- Section header -->
-    <div class="section-header">
-        <h1>Our Services</h1>
+    <img src="{{ url_for('static', filename='img/services-header.png') }}" alt="Services Header">
+    <!-- Breadcrumb Navigation -->
+    <nav>
+        <a href="/">Home</a> > <a href="/services">Our Services</a>
+    </nav>
+
+    <div class="services-header">
+        <div class="header-text">
+            <h1>OUR SERVICES</h1>
+            <p>Explore tailored solutions to empower your business growth.</p>
+        </div>
+        <div class="divider"></div>
+        <p style="margin: 30px; margin-top: 0; text-align: justify;">At La Whizz, we offer expert business solutions to help you streamline 
+            operations and enhance efficiency. Explore our core services designed to 
+            support your business growth and success.</p>
     </div>
 
     <!-- Service cards container -->
@@ -44,5 +56,13 @@
             <a href="{{ url_for('user_bp.service_detail', service='human-resources') }}" class="cta-button">Learn More</a>
         </div>
     </div>
+
+    <!-- Call to Action -->
+    <section id="cta-services">
+        <h2>Optimize Your Business with Our Expertise!</h2>
+        <p>Let's take your business to the next level with our tailored solutions.</p>
+        <a href="/contact" class="cta-button">Consult With Us</a>
+    </section>
+    
 </section>
 {% endblock %}

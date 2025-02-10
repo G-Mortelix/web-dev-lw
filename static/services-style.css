@@ -2,34 +2,83 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-image: url('/static/img/services-bg2.png');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0px;
-    align-items: center;
+    background-color: white; /* Kept a clean white background */
+    padding: 0; /* Removed extra padding around the section */
     flex-wrap: wrap;
     margin: auto;
 }
 
-#services .section-header {
-    margin-bottom: 40px;
-    color: #4d2e55;
-    text-align: center;
+/* Full-width image at the top */
+#services img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
-#services .section-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0 0 10px;
+/* Breadcrumb Navigation */
+#services nav {
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(37, 37, 37);
+    width: -webkit-fill-available;
 }
+
+#services nav a {
+    text-decoration: none;
+    color: white; /* Keep links black */
+    margin-right: 5px;
+}
+
+#services nav a:hover {
+    text-decoration: underline;
+}
+
+/* Services Header Section */
+.services-header {
+    position: relative;
+    width: -webkit-fill-available;
+    overflow: hidden;
+    padding: 5% 0; /* Add padding for spacing */
+}
+
+.services-header .divider {
+    width: 96%; /* Make the divider span full width */
+    max-width: 1100px; /* Prevent it from being too long on large screens */
+    margin: 2% auto; /* Center it and reduce excessive margin */
+    margin-top: 14%;
+    border: none;
+    border-top: 1px solid grey; /* Make it slightly thicker */
+}
+
+/* Header Text */
+.services-header .header-text {
+    position: static; /* Remove absolute positioning */
+    text-align: left; /* Align text to the left */
+    color: black; /* Dark theme for better contrast */
+    margin-left: 20px; /* Add margin to move text slightly inward */
+}
+
+.services-header .header-text h1 {
+    font-size: 2.5rem; /* Consistent font size */
+    margin: 0 0 10px 0; /* Add spacing below the title */
+    color: black;
+}
+
+#services .services-header .header-text p {
+    font-size: 1.2rem;
+    margin: 0; /* Remove top margin */
+    color: grey;
+    margin-top: 10px; /* Add slight spacing below the header */
+}
+
 
 #services .service-cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 60px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 10%;
 }
 
 #services .service-container {
@@ -40,12 +89,11 @@
 
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
     padding: 15px;
-    background-color: white;
+    background-color: #d3d3d3;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    height: 340px;  
+    height: 360px;  
 }
 
 #services .section-container {
@@ -63,7 +111,7 @@
 }
 
 #services .icon img {
-    width: 60px;
+    width: 90px;
     display: block;
     max-width: 100%;
     height: auto;
@@ -84,7 +132,7 @@
 
 #services h2 {
     font-size: 1.5rem;
-    color: #6c1d3e;
+    color: #2e2e34;
 }
 
 #services p {
@@ -93,11 +141,9 @@
 }
 
 #services .cta-button {
-    background-color: #831e35;
-    border: 0 solid #893b56;
-    border-radius: 1.5rem;
+    background-color: #ffffff;
     box-sizing: border-box;
-    color: #feebf6;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 1.1rem;
@@ -115,16 +161,57 @@
 }
 
 #services .cta-button:hover {
-    background-color: #3b1e26;
+    background-color: #211f0c;
     color: #fff;
 }
 
-@media (min-width: 768px) {
-  .button-81 {
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
-  }
+
+/* for cta in the end of about us page*/
+/* CTA Section */
+
+#services #cta-services {
+    max-width: 94%;
+    margin: 20px;
+    padding: 20px;
+    background: #fff267;
 }
+
+#services #cta-services h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Responsive tweaks for a better card layout on smaller devices */
+@media (max-width: 768px) {
+    #services .service-cards {
+        gap: 20px; /* Adjust gap for better spacing */
+    }
+
+    #services .service-container {
+        max-width: 100%; /* Ensure cards take full width */
+        margin: 0 auto; /* Center align on smaller screens */
+    }
+
+    #services .section-header h1 {
+        font-size: 2rem; /* Adjust header size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    #services .service-cards {
+        gap: 15px; /* Reduce gap further for tighter layout */
+    }
+
+    #services .section-header h1 {
+        font-size: 1.8rem; /* Smaller header size for phones */
+        padding: 0 10px;
+    }
+}
+
+
 
 /* Service Detail Section */
 #service-detail {
@@ -135,15 +222,15 @@
 }
 
 #service-detail.bookkeeping {
-    background-image: url('/static/img/services-detail/bk-bg1f.png');
+    background-color: white;
 }
 
 #service-detail.business-administration {
-    background-image: url('/static/img/services-detail/ba_bg1f.png');
+    background-color: white;
 }
 
 #service-detail.human-resources {
-    background-image: url('/static/img/services-detail/hr-bg.png');
+    background-color: white;
 }
 
 #service-detail {
@@ -157,7 +244,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 60px;
-    background-color: rgba(255, 255, 255, 0.972);
+    background-color: #323232;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: justify;
@@ -168,19 +255,19 @@
 #service-detail h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #4d2e55;
+    color: white;
     text-align: center;
 }
 
 .offer-section {
     padding: 0 15px 0 15px;
-    border-left: 4px solid #831e35;
+    border-left: 4px solid #ffff1d;
     margin-bottom: 25px;
 }
 
 .offer-section h2 {
     font-size: 1.8rem;
-    color: #831e35;
+    color: white;
     font-weight: bold;
     margin-top: 0;
 }
@@ -193,7 +280,7 @@
 
 .offer-section ul li {
     font-size: 1.1rem;
-    color: #191919;
+    color: white;
     margin-bottom: 10px;
     padding-left: 1.5rem;
     position: relative;
@@ -201,7 +288,7 @@
 
 .offer-section ul li::before {
     content: "•";
-    color: #831e35;
+    color: #242527;
     position: absolute;
     left: 0;
     font-size: 1.5rem;
@@ -210,15 +297,15 @@
 
 #service-detail p {
     font-size: 1rem;
-    color: #1a1a1a;
+    color: white;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
 #service-detail .cta-button {
     display: inline-block;
-    background-color: #831e35;
-    color: #fff;
+    background-color: white;
+    color: black;
     padding: 12px 20px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -231,8 +318,9 @@
 }
 
 #service-detail .cta-button:hover {
-    background-color: #6e1930;
+    background-color: #161723;
     transform: translateY(-3px);
+    color: white;
 }
 
 /*responsive design*/
@@ -306,5 +394,3 @@
         padding: 0.8rem;
     }
 }
-
-

@@ -1,5 +1,5 @@
 .footer-section {
-    background: linear-gradient(135deg, #663046, #5d1631);
+    background: linear-gradient(135deg, rgb(27, 26, 26),  black);
     color: #ffffff;
     text-align: left;
     width: 100%;
@@ -34,9 +34,9 @@
 }
 
 .footer-column .divider {
-    width: 40px;
-    height: 3px;
-    background-color: #e2e079;
+    width: 50px;
+    height: 2px;
+    background-color: #fffcd6;
     margin: 8px 0px;
 }
 

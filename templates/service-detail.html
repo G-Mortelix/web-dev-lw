@@ -4,6 +4,11 @@
 
 {% block content %}
 <section id="service-detail" class="{{ service | lower }}">
+    <nav>
+        <a href="/">Home</a> > <a href="/services">Our Services</a> > 
+        <a href="/services/{{ service | replace(' ', '-') }}">{{ service.replace('-', ' ').title() }}</a>
+    </nav>
+    
     <div class="section-container">
         {% if service == 'bookkeeping' %}
             <h1>Book-keeping Services</h1>
@@ -18,6 +23,9 @@
             <p>With our book-keeping services, you can focus on growing your business while we handle your day-to-day financial management.</p>
         
         {% elif service == 'business-administration' %}
+            <nav>
+                <a href="/">Home</a> > <a href="/services">Our Services</a> > <a href="/services/business-administration">Business Administration</a>
+            </nav>
             <h1>Business Administration Services</h1>
             <div class="offer-section">
                 <h2>Our Administration Services Include:</h2>
@@ -29,6 +37,9 @@
             <p>With our professional administration support, your business can focus on innovation and growth without being bogged down by administrative burdens.</p>
 
         {% elif service == 'human-resources' %}
+            <nav>
+                <a href="/">Home</a> > <a href="/services">Our Services</a> > <a href="/services/human-resources">Human Resources</a>
+            </nav>
             <h1>Human Resources Services</h1>
             <div class="offer-section">
                 <h2>Our HR Services Include:</h2>

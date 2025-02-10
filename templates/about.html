@@ -3,119 +3,152 @@
 {% block title %}About Us - La Whizz{% endblock %}
 
 {% block content %}
-<section id="about-us">
-    <img src="{{ url_for('static', filename='img/about-header.png') }}" alt="header-pic">
-    <h2>About La Whizz</h2>
-    <div class="divider"></div>
-    <div class="section-container">
-        <p> At La Whizz, we believe in harnessing
-            the power of innovation to deliver expert solutions that drive success. With multiple
-            experience in the business solutions industry, we've cultivated a reputation for
-            excellence, reliability, and customer satisfaction.</p>
-            <!-- <div class="divider"></div> -->
-        <p> Our mission is to provide businesses with
-            the tools and strategies they need to thrive in an ever-changing marketplace.
-            From tailored financial management solutions to cutting-edge
-            administrative services, La Whizz offers a comprehensive suite of services designed to meet
-            the unique challenges of modern businesses.</p>
-            <!-- <div class="divider"></div> -->
-        <p> We pride ourselves on our commitment to integrity,
-            collaboration, and forward-thinking. With a team of seasoned professionals dedicated to
-            continuous improvement, we help businesses unlock their full potential.</p>
-    </div>
-</section>
+<section id="about-us-container">
 
-<section id="mission-vision">
-    <div class="mv-item">
-        <div class="icon">
-            <img src="{{ url_for('static', filename='icons/mission.png') }}" width="94px" alt="Mission Icon">
+    <section id="about-us">
+        <img src="{{ url_for('static', filename='img/about-header.png') }}" alt="header-pic">
+    
+        <!-- Breadcrumb Navigation -->
+        <nav>
+            <a href="/">Home</a> > <a href="/about">About Us</a>
+        </nav> 
+    
+        <h2>ABOUT LA WHIZZ</h2>
+        <p class="tagline">Driving Innovation, Empowering Businesses, Delivering Excellence.</p>
+        <div class="divider"></div>
+    
+    
+        <div class="section-container">
+            <h3 style="text-align: left;"> Company Profile:</h3>
+            <p> La Whizz is a business solutions firm committed to innovation, 
+                excellence, and customer satisfaction. We specialize in tailored 
+                financial strategies and cutting-edge administrative services to help businesses thrive.</p>
+                
+            <h3 style="text-align: left;"> Our History:</h3>
+            <p> Founded in 2024, we are eager to help out all nature of businesses. Join us
+                to grow your reputation as a company.</p>
+            <p style="text-align: center; font-size: 1.8rem; font-weight: bolder;"> ..... </p>
+            
+            <div class="space-md"></div>
+            <h3 style="font-size: 2rem; font-weight: 700;">OUR PURPOSE</h3>
         </div>
-        <h3>Mission</h3>
-        <div class="mv-desc">
-            <p>Empowering clients through financial literacy and simplifying financial complexity.
-                ⁠Innovating financial solutions with a delivering measurable results.</p>
-        </div>
-    </div>
-    <div class="mv-item">
-        <div class="icon">
-            <img src="{{ url_for('static', filename='icons/vision.png') }}" width="95px" alt="Vision Icon">
-        </div>
-        <h3>Vision</h3>
-        <div class="mv-desc">
-            <p>We aspire to be the best professional services firm by providing innovative
-                and practical services to clients and aims to produce a multi-talented account expertise.</p>
-        </div>
-    </div>
-    <div class="mv-item">
-        <div class="icon">
-            <img src="{{ url_for('static', filename='icons/value.png') }}" width="95px" alt="Value Icon">
-        </div>
-        <h3>Values</h3>
-        <div class="mv-desc">
-            <p><br>Integrity, expertise, innovation, and continuous improvements in everything we do.</p>
-        </div>
-    </div>
-</section>
-
-<section id="our-leader">
-    <h2>Our Leader</h2>
-    <div class="divider"></div>
-    <div class="section-container">
-        <div class="leader-profile">
-            <img src="{{ url_for('static', filename='icons/jy-pic.png') }}" alt="Leader Name">
-            <div class="leader-name">
-                <h3>Lim Jia Yong</h3>
-                <p>Managing Director</p>
+        
+        <div class="divider"></div>
+    </section>
+    
+    <section id="mission-vision">
+        <div class="mv-item">
+            <div class="icon">
+                <img id="mission-icon" src="{{ url_for('static', filename='icons/mission.png') }}" width="95px" alt="Mission Icon">
             </div>
-            <p>With a long experience in accounting, Miss Lim Jia Yong has acquired certificates from
-                CIMA and MIA. Graduated from SEGi University College in Faculty of Business and Accounting,
-                Miss Lim Jia Yong definitely have the credibility and skills to enhance the quality of her
-                firm. This has undoubtedly makes La Whizz easily established itself as one of the top
-                accounting firm in Malaysia.
-            </p>
+            <h3>Mission</h3>
+            <div class="mv-desc">
+                <p>Empowering clients with financial literacy, 
+                    simplifying complexity, and delivering measurable 
+                    results through innovative solutions.</p>
+            </div>
         </div>
-    </div>
+        <div class="mv-item">
+            <div class="icon">
+                <img id="vision-icon" src="{{ url_for('static', filename='icons/vision.png') }}" width="95px" alt="Vision Icon">
+            </div>
+            <h3>Vision</h3>
+            <div class="mv-desc">
+                <p>We aim to be the top professional services firm, 
+                    offering innovative solutions and developing multi-talented 
+                    expertise.</p>
+            </div>
+        </div>
+        <div class="mv-item">
+            <div class="icon">
+                <img id="value-icon" src="{{ url_for('static', filename='icons/value.png') }}" width="95px" alt="Value Icon">
+            </div>
+            <h3>Values</h3>
+            <div class="mv-desc">
+                <p>We uphold integrity, expertise, innovation, and continuous 
+                    improvement in everything we do and offer.</p>
+            </div>
+        </div>
+    </section>
+    
+    <p style="text-align: center; font-size: 1.8rem; font-weight: bolder;"> ..... </p>
+    
+    <section id="our-leader">
+        <h3>MEET OUR DIRECTOR</h3>
+        <div class="divider"></div>
+        <div class="section-container">
+            <div class="leader-profile">
+                <img src="{{ url_for('static', filename='icons/director-pic.jpg') }}" alt="Leader Name">
+                <div class="leader-name">
+                    <h4>Lim Jia Yong</h4>
+                    <div class="divider"></div>
+                    <p>Managing Director</p>
+                    <p>With a long experience in accounting, Miss Lim Jia Yong has acquired certificates from
+                        CIMA and MIA. Graduated from SEGi University College in Faculty of Business and Accounting,
+                        Miss Lim Jia Yong definitely have the credibility and skills to enhance the quality of her
+                        firm. This has undoubtedly makes La Whizz easily established itself as one of the top
+                        accounting firm in Malaysia.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="space-xl"></div>
+        <div class="section-container">
+            <div class="leader-profile">
+                <div class="leader-name">
+                    <h4>Nur Syafiqah</h4>
+                    <div class="divider"></div>
+                    <p>Account</p>
+                    <p>This is placeholder text. Imagine a herd of llamas coding JavaScript while 
+                        sipping coffee on a sunny beach. The sky is purple, the ocean is green, and 
+                        everyone is wearing top hats for no reason. Yep, none of this makes sense, 
+                        but that's okay—this text is here just to fill space. Move along, nothing to see here.
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='icons/co-director-pic-11ratio.jpg') }}" alt="Leader Name">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section id="cta-about-us">
+        <h2>Interested in Working With Us?</h2>
+        <p>Let's discuss how we can help your business grow.</p>
+        <a href="/contact" class="cta-button">Get in Touch</a>
+    </section>
+
+    <div class="space-lg"></div>
 </section>
 
 <script>
- document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".slide");
-  const nextButton = document.querySelector(".next");
-  const prevButton = document.querySelector(".prev");
-  const paginationItems = document.querySelectorAll(".pagination .item");
-  let currentSlide = 0;
-  const totalSlides = slides.length;
+    // JavaScript to swap icons on hover
+    document.getElementById('mission-icon').onmouseover = function() {
+        this.src = "{{ url_for('static', filename='icons/mission-inverted.png') }}";
+    };
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('is-active', i === index);
-    });
-    paginationItems.forEach((item, i) => {
-      item.classList.toggle('is-active', i === index);
-    });
-    currentSlide = index;
-  }
+    document.getElementById('mission-icon').onmouseout = function() {
+        this.src = "{{ url_for('static', filename='icons/mission.png') }}";
+    };
 
-  function showNextSlide() {
-    let nextSlide = (currentSlide + 1) % totalSlides;
-    showSlide(nextSlide);
-  }
+    // Repeat for vision and value icons
+    document.getElementById('vision-icon').onmouseover = function() {
+        this.src = "{{ url_for('static', filename='icons/vision-inverted.png') }}";
+    };
 
-  function showPrevSlide() {
-    let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(prevSlide);
-  }
+    document.getElementById('vision-icon').onmouseout = function() {
+        this.src = "{{ url_for('static', filename='icons/vision.png') }}";
+    };
 
-  nextButton.addEventListener("click", showNextSlide);
-  prevButton.addEventListener("click", showPrevSlide);
+    // Repeat for vision and value icons
+    document.getElementById('value-icon').onmouseover = function() {
+        this.src = "{{ url_for('static', filename='icons/value-inverted.png') }}";
+    };
 
-  paginationItems.forEach((item, index) => {
-    item.addEventListener("click", () => showSlide(index));
-  });
-
-  setInterval(showNextSlide, 4000); // Auto-play every 4 seconds
-});
+    document.getElementById('value-icon').onmouseout = function() {
+        this.src = "{{ url_for('static', filename='icons/value.png') }}";
+    };
 
 </script>
+
 
 {% endblock %}

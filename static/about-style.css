@@ -1,10 +1,16 @@
 /*about us section-start*/
 #about-us {
-    background: linear-gradient(270deg, #f5ecee, #ffffff);
+    background: white;
+}
+
+#about-us-container {
+    background: white;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #about-us .section-container {
-    max-width: 750px;
+    max-width: 94%;
     margin: 0 auto;
     padding: 20px;
     text-align: center; 
@@ -15,12 +21,13 @@
     max-width: 100%; 
     height: auto; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    display: block;
 }
 
 #about-us h2 {
     font-size: 2.3rem;
-    margin: 30px 0;
-    margin-left: 17%;
+    margin: 80px 0 0 0;
+    margin-left: 5%;
     color: black;
 }
 
@@ -33,61 +40,106 @@
     padding: 0 0 25px 0;
 }
 
+#about-us .section-container .space-md {
+    padding-top: 4rem;
+}
+
+#about-us .divider {
+    width: 90%;
+    margin: 10px auto; 
+    border: none;
+    border-top: 1px solid;
+    border-color: black;
+}
+
 #about-us i:hover {
     transform: scale(1.2);
     transition: 0.2s;
 }
 
-#about-us .divider {
-    width: auto;
-    height: 3px;
-    margin: 20px auto; 
-    border: none;
-    border-top: 2px dotted;
-    border-color: #651c1c;
+/* Breadcrumb Navigation Styling */
+#about-us nav {
+    font-size: 1rem;
+    background: #1a1c22e0;
+    color: white;
 }
+
+nav a {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Tagline Styling */
+#about-us .tagline {
+    margin-left: 5%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8%;
+}
+
+@media (max-width: 768px) {
+    #about-us h2 {
+        font-size: 2rem; 
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    #about-us p {
+        font-size: 0.9rem; 
+        line-height: 1.8rem;
+    }
+}
+
 /*about us section-end*/
 
 /* Our Leader Section */
 #our-leader {
     padding: 50px 0 80px 0;
-    background: linear-gradient(270deg, #f5ecee, #ffffff);
+    background: white;
     align-items: center;
     flex-wrap: wrap;
 }
 
 #our-leader .divider {
-    width: auto;
+    width: 90%;
     height: 3px;
     margin: 20px auto; 
     border: none;
-    border-top: 2px dotted;
-    border-color: #651c1c;
+    border-top: 1px solid;
+    border-color: #9c9c9c;
 }
 
 #our-leader .section-container {
-    max-width: 750px;
+    max-width: 94%;
     margin: 0 auto;
     padding: 20px;
 }
 
-#our-leader h2 {
-    font-size: 2rem;
-    margin: 50px 0 30px;
-    margin-left: 17%;
+#our-leader h3 {
+    font-size: 2.3rem;
+    margin: 0;
+    margin-left: 5%;
+    margin-top: 5%;
     color: black;
 }
 
 .leader-profile {
     display: flex;
-    margin: 0 auto;
-    flex-wrap: wrap; /* To make it responsive */
-    gap: 30px;
+    align-items: center; /* Vertically center the image and text */
+    justify-content: flex-start; /* Make sure they align on the left */
+    gap: 30px; /* Space between image and text */
+    width: 100%; /* Make sure the profile section takes full width */
 }
 
 .leader-profile img {
-    width: 100px;
-    height: 100px;
+    width: 37%;
     object-fit: cover;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
@@ -97,24 +149,25 @@
     line-height: 1.7rem;
 }
 
-.leader-name h3 {
-    font-size: 1.6rem;
+.leader-name h4 {
+    font-size: 2rem;
     margin-top: 0;
     color: #000;
 }
 
 .leader-name p {
+    max-width: 100%;
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #000;
     line-height: normal;
 }
 
-.leader-info p {
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 2rem;
-    color: #000000;
+#our-leader .leader-name .divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid;
+    border-color: #5b5b5b;
 }
 
 @media (max-width: 768px) {
@@ -158,4 +211,38 @@
         margin: 50px 0 30px;
         text-align: center;
     }
+}
+
+
+/* for cta in the end of about us page*/
+/* CTA Section */
+
+#cta-about-us {
+    max-width: 94%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff267;
+}
+
+#cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: white;
+    color: black;
 }
