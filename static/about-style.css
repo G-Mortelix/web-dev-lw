@@ -7,6 +7,9 @@
     background: white;
     align-items: center;
     flex-wrap: wrap;
+
+    background-color: rgba(255, 255, 255, 0.625); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 #about-us .section-container {
@@ -58,22 +61,30 @@
 }
 
 /* Breadcrumb Navigation Styling */
-#about-us nav {
+.about-breadcrumb {
+    background-color: #1a1c22e0; /* Dark background */
+    padding: 10px 20px; /* Spacing inside */
     font-size: 1rem;
-    background: #1a1c22e0;
-    color: white;
 }
 
-nav a {
-    font-size: 1rem;
-    color: #ffffff;
+.about-breadcrumb a {
+    color: white; /* Light text for contrast */
     text-decoration: none;
-    margin-left: 10px;
+    margin-right: 5px;
+    transition: color 0.3s ease-in-out;
 }
 
-nav a:hover {
+.about-breadcrumb a:hover {
     text-decoration: underline;
+    color: #ffcc00; /* Light yellow highlight on hover */
 }
+
+.about-breadcrumb span {
+    color: white;
+    margin: 0 5px;
+}
+
+
 
 /* Tagline Styling */
 #about-us .tagline {
@@ -229,20 +240,27 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-.cta-button {
+#about-us-container .cta-button-help {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
     display: inline-block;
-    background: black;
-    color: white;
-    padding: 10px 25px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: 0.3s;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
-.cta-button:hover {
-    background: white;
-    color: black;
+#about-us-container .cta-button-help:hover {
+    background: black;
+    color: white;
 }

@@ -6,8 +6,8 @@
 <section id="services">
     <img src="{{ url_for('static', filename='img/services-header.png') }}" alt="Services Header">
     <!-- Breadcrumb Navigation -->
-    <nav>
-        <a href="/">Home</a> > <a href="/services">Our Services</a>
+    <nav class="service-breadcrumb">
+        <a href="/">Home</a> <span> > </span> <a href="/services">Services</a>
     </nav>
 
     <div class="services-header">
@@ -16,10 +16,11 @@
             <p>Explore tailored solutions to empower your business growth.</p>
         </div>
         <div class="divider"></div>
-        <p style="margin: 30px; margin-top: 0; text-align: justify;">At La Whizz, we offer expert business solutions to help you streamline 
+        <p style="margin: 0 2%; margin-top: 0; text-align: justify;">At La Whizz, we offer expert business solutions to help you streamline 
             operations and enhance efficiency. Explore our core services designed to 
             support your business growth and success.</p>
     </div>
+    <div class="space-md"></div>
 
     <!-- Service cards container -->
     <div class="service-cards">

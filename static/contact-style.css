@@ -1,5 +1,5 @@
 #contact-us {
-    background-color: rgba(227, 208, 220, 0);
+    background-color: #e3d0dc00;
     background-size: cover;
     background-position: center;
 }
@@ -14,8 +14,12 @@
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 150px;
     justify-content: center;
+}
+
+.contact-container {
+    padding: 0 5%;
 }
 
 .map-container {
@@ -27,30 +31,43 @@
     align-items: center;
 }
 
-#contact-us p {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #680c34;
-    margin-bottom: 0;
-}
-
 #contact-us .section-container {
-    max-width: 1000px;
     margin: 0 auto;
-    padding: 30px;
     background-color: rgba(255, 255, 255, 0.625); 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: left;
-    width: 90%;
 }
 
 #contact-us h1 {
     font-size: 2.5rem;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #a41860;
-    font-weight: 600;
+    color: black; /* Dark text for the title */
+    margin-bottom: 20px; /* Space below the title */
 }
+
+#contact-us p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8%;
+}
+
+#contact-us #contact-header p {
+    font-size: 1.1rem;
+    color: black;
+    margin: 15px 0;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+#contact-us .divider {
+    width: 100%;
+    margin: 15% auto 20px;
+
+    border: none;
+    border-top: 1px solid;
+    border-color: #212121;
+}
+
 
 /* Contact Form */
 #contact-form {

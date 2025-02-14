@@ -4,59 +4,147 @@
 
 {% block content %}
 <section id="service-detail" class="{{ service | lower }}">
-    <nav>
-        <a href="/">Home</a> > <a href="/services">Our Services</a> > 
-        <a href="/services/{{ service | replace(' ', '-') }}">{{ service.replace('-', ' ').title() }}</a>
+    <img src="{{ url_for('static', filename='img/services-detail/services-header-' + service + '.png') }}" 
+     alt="{{ service.title() }} Header">
+
+     <nav class="service-detail-breadcrumb">
+        <a href="/">Home</a> <span> > </span>
+        <a href="/services">Services</a> <span> > </span> 
+        <a href="/services/{{ service }}">
+            {% if service == 'bookkeeping' %}
+                Book-keeping
+            {% else %}
+                {{ service.replace('-', ' ').title() }}
+            {% endif %}
+        </a>
     </nav>
     
-    <div class="section-container">
+    <!-- Service Intro (Outside Grey Box) -->
+    <div class="service-intro">
+        <h1 class="service-title">
+            <img src="{{ url_for('static', filename='icons/' + service + '-icon-trans.png') }}" 
+                 alt="{{ service.title() }} Icon" class="service-icon">
+            {% if service == 'bookkeeping' %}
+                Book-keeping Services
+            {% else %}
+                {{ service.replace('-', ' ').title() }} Services
+            {% endif %}
+        </h1>
         {% if service == 'bookkeeping' %}
-            <h1>Book-keeping Services</h1>
-            <div class="offer-section">
-                <h2>What We Offer:</h2>
-                <ul>
+            <h2>What is Book-keeping?</h2>
+            <div class="divider"></div>
+            <p>Bookkeeping is the foundation of a well-managed business. 
+                It involves the systematic recording, organizing, and tracking of financial transactions to ensure accuracy and compliance. 
+            </p>
+
+            <div class="space-sm"></div>
+            <p>By maintaining clear and up-to-date financial records, businesses can monitor cash 
+                flow, prepare for taxes, and make informed financial decisions.</p>
+
+            <div class="space-sm"></div>
+            <p>Proper book-keeping is essential for these purposes: </p>
+            <ul>
+                <li>Financial clarity to know exactly where your money is going.</li>
+                <li>Regulatory compliance to meet tax and reporting obligations with accurate records. </li>
+                <li>Better decision-making to drive your business growth.</li>
+            </ul>
+
+            <div class="space-sm"></div>
+            <p>Effective bookkeeping provides the clarity and structure needed for sustainable financial growth.</p>
+
+
+        {% elif service == 'business-administration' %}
+            <h2>What is Business Administration?</h2>
+            <div class="divider"></div>
+            <p>Business administration is the strategic management of an organization's resources, people, 
+                and operations to ensure efficiency and long-term success. It covers a broad range of functions, 
+                including finance, marketing, human resources, operations, and strategic planning where all working together 
+                to drive business growth.</p>
+
+            <div class="space-sm"></div>
+            <p>A well-structured business administration system ensures these: </p>
+            <ul>
+                <li>Strong teamwork</li>
+                <li>Efficient operations</li>
+                <li>Scalability and growth</li>
+            </ul>
+            
+            <div class="space-sm"></div>
+            <p>Business administrators play a vital role in keeping organizations running smoothly, from small 
+                startups to multinational corporations. Whether managing daily operations, overseeing financial planning, 
+                or leading teams, effective business administration is essential for building a strong and competitive company.</p>
+
+        {% elif service == 'human-resources' %}
+            <h2>What is Human Resources (HR)?</h2>
+            <div class="divider"></div>
+            <p>HR is the backbone of an organization, managing 
+                its most valuable asset, its people. HR ensures businesses attract, retain, and develop talent 
+                while fostering a positive and compliant work environment.</p>
+
+            <div class="space-sm"></div>
+            <p>Some of the key HR functions are: </p>
+            <ul>
+                <li>Training</li>
+                <li>Employee Relations</li>
+                <li>Talent Recruitment</li>
+                <li>Workplace Policies</li>
+                <li>Compensation and Benefits</li>
+            </ul>
+
+            <div class="space-sm"></div>
+            <p>Beyond administration, HR plays a strategic role in shaping company culture, optimizing workforce performance, 
+                and driving long-term organizational success. Whether in a small business or a large corporation, effective HR 
+                management is crucial for sustainable growth.</p>
+        {% else %}
+            <p>The requested service is not available at the moment.</p>
+        {% endif %}
+    </div>
+
+    <!-- Grey Box for Offer Section & Other Details -->
+    <div class="section-container">
+        <div class="offer-section">
+            <h2>What We Offer:</h2>
+            <ul>
+                {% if service == 'bookkeeping' %}
                     <li>Accounts Receivable and Payable Management</li>
                     <li>Full Set of Accounts (Profit & Loss, Balance Sheet, Trial Balance, General Ledger)</li>
                     <li>Financial Reporting on a Monthly, Quarterly, and Annual Basis</li>
-                </ul>
-            </div>
-            <p>With our book-keeping services, you can focus on growing your business while we handle your day-to-day financial management.</p>
-        
-        {% elif service == 'business-administration' %}
-            <nav>
-                <a href="/">Home</a> > <a href="/services">Our Services</a> > <a href="/services/business-administration">Business Administration</a>
-            </nav>
-            <h1>Business Administration Services</h1>
-            <div class="offer-section">
-                <h2>Our Administration Services Include:</h2>
-                <ul>
+
+                {% elif service == 'business-administration' %}
                     <li>Invoice Generation and Billing Management (Compliance with e-invoicing)</li>
                     <li>Office Management and Administrative Support</li>
-                </ul>
-            </div>
-            <p>With our professional administration support, your business can focus on innovation and growth without being bogged down by administrative burdens.</p>
 
-        {% elif service == 'human-resources' %}
-            <nav>
-                <a href="/">Home</a> > <a href="/services">Our Services</a> > <a href="/services/human-resources">Human Resources</a>
-            </nav>
-            <h1>Human Resources Services</h1>
-            <div class="offer-section">
-                <h2>Our HR Services Include:</h2>
-                <ul>
+
+                {% elif service == 'human-resources' %}
                     <li>Recruitment and Talent Acquisition Services</li>
                     <li>Payroll Processing Services</li>
                     <li>Employee Training and Development Programs</li>
-                </ul>
-            </div>
-            <p>We partner with businesses to foster a strong, motivated workforce and a positive organizational culture.</p>
 
-        {% else %}
-            <h1>Service Not Found</h1>
-            <p>The requested service is not available at the moment.</p>
+                {% endif %}
+            </ul>
+        </div>
+
+        {% if service == 'bookkeeping' %}     
+        <p>With our book-keeping services, you can focus on growing your 
+            business while we handle your day-to-day financial management.</p>
+        {% elif service == 'business-administration' %}
+        <p>With our professional administration support, your business 
+            can focus on innovation and growth without being bogged down by administrative burdens.</p>
+        {% elif service == 'human-resources' %}
+        <p>We partner with businesses to foster a strong, motivated 
+            workforce and a positive organizational culture.</p>
         {% endif %}
 
-        <a href="/contact" class="cta-button">Contact Us for More Information</a>
+        <div class="space-xl"></div>
+        <a href="/contact" class="cta-button">Get Quote</a>
     </div>
+
+    <!-- Call to Action -->
+    <section id="cta-services">
+        <h2>Have Any Questions? We Are Here to Help!</h2>
+        <p>Get in touch with our experts to learn more about our services.</p>
+        <a href="/contact" class="cta-button">Consult With Us</a>
+    </section>
+
 </section>
 {% endblock %}

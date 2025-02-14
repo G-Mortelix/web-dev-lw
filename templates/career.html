@@ -5,18 +5,45 @@
 {% block content %}
 <section id="career-groups">
     <div class="section-container">
-        <h1>Careers at La Whizz</h1>
-        <p>Explore the exciting career opportunities at La Whizz. Select your preferred career group below</p>
+        <img src="{{ url_for('static', filename='img/career-header.png') }}" alt="header-pic">
+    
+        <!-- Breadcrumb Navigation -->
+        <nav class="career-breadcrumb">
+            <a href="/">Home</a> <span> > </span> <a href="/career">Career</a>
+        </nav> 
+        
+        <section id="careers">
+            <h1>CAREERS AT LA WHIZZ</h1>
+            <p>Join Our Team, Shape the Future</p>
 
-        <section id="why-join-us">
-            <h2>Why Join Us?</h2>
-            <ul>
-                <li>Competitive salary and benefits package.</li>
-                <li>Opportunities for professional development and career growth.</li>
-                <li>Work in a collaborative and innovative environment.</li>
-                <li>Flexible work arrangements and support for work-life balance.</li>
-            </ul>
-        </section>
+            <div class="divider"></div>
+            <section id="why-work-with-us">
+                <h2>Why Work With Us?</h2>
+                <p>At La Whizz, we believe in creating a positive, inclusive work environment 
+                    where innovation and creativity thrive. We value teamwork, professional growth, 
+                    and work-life balance. Joining our team means being part of a company that's 
+                    committed to helping you achieve your full potential while making a real impact in the world.</p>
+            </section>
+
+            <!-- Company Culture -->
+            <section id="company-culture">
+                <h2>Our Culture</h2>
+                <p>We foster a collaborative, open-minded, and supportive culture. Collaborating on 
+                    innovative ideas and addressing challenging projects will leave you feeling empowered 
+                    and valued at every step. We celebrate diversity and encourage everyone 
+                    to bring their unique perspectives to the table.</p>
+            </section>
+        
+            <section id="why-join-us">
+                <h2>Perks & Benefits</h2>
+                <ul>
+                    <li>Competitive salary and benefits package.</li>
+                    <li>Collaborative, inclusive, and innovative environment.</li>
+                    <li>Flexible work arrangements and support for work-life balance.</li>
+                    <li>Opportunities for professional development and career growth.</li>
+                </ul>
+            </section>
+        </section>        
 
         {% set career_groups = [
             {'name': 'Fresh Graduate', 'description': 'Begin your career with opportunities designed for fresh graduates.'},
@@ -27,17 +54,34 @@
         <div class="career-grid-horizontal">
             {% for career in career_groups %}
             <div class="career-card-horizontal">
-                {% set hue_value = loop.index * 80 %}
-                <img src="{{ url_for('static', filename='icons/career-group.png') }}"
-                     alt="{{ career.name }} Icon"
-                     class="career-icon"
-                     style="filter: hue-rotate({{ hue_value }}deg) saturate(2) brightness(1.2);">
+                <!-- Conditional logic for displaying different icons -->
+                {% if career.name == "Fresh Graduate" %}
+                    <img src="{{ url_for('static', filename='icons/career-freshgrad.png') }}" alt="{{ career.name }} Icon" class="career-icon">
+                {% elif career.name == "Internship" %}
+                    <img src="{{ url_for('static', filename='icons/career-intern.png') }}" alt="{{ career.name }} Icon" class="career-icon">
+                {% elif career.name == "Professional" %}
+                    <img src="{{ url_for('static', filename='icons/career-professional.png') }}" alt="{{ career.name }} Icon" class="career-icon">
+                {% else %}
+                    <img src="{{ url_for('static', filename='icons/default-icon.png') }}" alt="{{ career.name }} Icon" class="career-icon">
+                {% endif %}
+                
                 <h2>{{ career.name }}</h2>
                 <p>{{ career.description }}</p>
                 <a href="{{ url_for('user_bp.career_by_group', group=career.name) }}" class="cta-button">View Jobs</a>
             </div>
             {% endfor %}
-        </div>
+        </div>   
+        
+        <div class="space-xl"></div>
+
+        <!-- Call to Action -->
+        <section id="cta-career">
+            <h2>Interested in Joining Us?</h2>
+            <p>Contact us to learn more about the perks of joining our team.</p>
+            <a href="/contact" class="cta-button-help">Get in Touch</a>
+        </section>
+        
+        <div class="space-lg"></div>
     </div>
 </section>
     <script>

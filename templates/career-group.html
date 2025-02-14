@@ -1,41 +1,81 @@
 {% extends 'index.html' %}
-{% block title %}Careers at La Whizz{% endblock %}
+{% block title %}Careers - La Whizz Sdn. Bhd.{% endblock %}
 
 {% block content %}
 <section id="career-group">
+    <img src="{{ url_for('static', filename='img/career-header.png') }}" alt="header-pic">
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="career-breadcrumb">
+        <a href="/">Home</a> <span> > </span> <a href="/career">Career</a> <span> > </span> <a href="#">{{ group }}</a>
+    </nav> 
+
+    <div class="space-xl"></div>
     <div class="section-container">
         <h1>{{ group }} Jobs</h1>
+        <div class="divider"></div>
 
+        {% if group == 'Fresh Graduate' %}
+
+        <p>As a fresh graduate, you're at the beginning of an exciting career journey. At La Whizz, 
+            we provide a nurturing environment where you can grow, learn, and make a real impact. With 
+            hands-on experience, mentorship, and opportunities for continuous improvement, this is the 
+            perfect place to kickstart your professional career.</p>
+
+        {% elif group == 'Internship' %}
+        <p>Our internship program is designed to give students the chance to apply their academic knowledge 
+            in a professional environment. You'll work closely with experienced professionals, gaining hands-on 
+            experience and exposure to the exciting world of business. We have many opportunities that can help you 
+            build your future career.</p>
+
+        {% elif group == 'Professional' %}
+        <p>At La Whizz, we value the experience and expertise that professionals bring to the table. If you're 
+            looking to take your career to the next level, we offer exciting opportunities to work on challenging 
+            projects, lead teams, and make a meaningful impact in your field. Join us and bring your skills to a 
+            company that values innovation, leadership, and continuous growth.</p>
+        
+        {% endif %}
+        
+        <div class="space-lg"></div>
         {% if jobs %}
         <ul class="job-list">
             {% for job in jobs %}
             <li class="job-list-item">
                 <h3>{{ job['Position'] }}</h3>
                 <div class="divider"></div>
+
                 <p>Description:</p>
                 <ul>
                     {% for line in job['Description'].split('\n') %}
                     <li>{{ line }}</li>
                     {% endfor %}
                 </ul>
+
+                <div class="space-md"></div>
                 <p>Requirements:</p>
                 <ul>
                     {% for line in job['Requirements'].split('\n') %}
                     <li>{{ line }}</li>
                     {% endfor %}
                 </ul>
+
+                <div class="space-md"></div>
                 <p>Benefits:</p>
                 <ul>
                     {% for line in job['Notes'].split('\n') %}
                     <li>{{ line }}</li>
                     {% endfor %}
                 </ul>
+
+                <div class="space-md"></div>
                 <p>Location:</p>
                 <ul>
                     {% for line in job['Location'].split('\n') %}
                     <li>{{ line }}</li>
                     {% endfor %}
                 </ul>
+
+                <div class="space-md"></div>
                 <a href="https://forms.gle/qByDPjwRfC5zL9rY8" target="_blank" class="cta-button">Apply Now</a>
             </li>
             {% endfor %}
@@ -44,6 +84,14 @@
         <p>No job positions available for this group at the moment.</p>
         {% endif %}
     </div>
+
+    <!-- Call to Action -->
+    <section id="cta-career">
+        <h2>Interested in Joining Us?</h2>
+        <p>Contact us to learn more about the perks of joining our team.</p>
+        <a href="/contact" class="cta-button-help">Get in Touch</a>
+    </section>
+    <div class="space-lg"></div>
 </section>
                 
 {% endblock %}

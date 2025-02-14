@@ -1,4 +1,3 @@
-<!-- news-detail.html -->
 {% extends 'index.html' %}
 
 {% block title %}{{ article.title }}{% endblock %}
@@ -6,6 +5,12 @@
 {% block content %}
 <section id="news-detail">
     <div class="section-container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="news-details-breadcrumb">
+            <a href="/">Home</a> <span> > </span> <a href="/news">News</a> <span> > </span> <a href="#">{{ article.title }}</a>
+        </nav>
+        <div class="space-xl"></div>
+
         <h1>{{ article.title }}</h1>
 
         {% if article.image_url %}
@@ -14,9 +19,11 @@
         <img src="{{ url_for('static', filename='img/news.png') }}" alt="{{ article.title }}" class="news-detail-image">
         {% endif %}
 
+        <div class="space-lg"></div>
         <p>{{ article.content.replace('\n', '<br>') | safe }}</p>
 
         <p><strong>Source:</strong> <a href="{{ article.source }}" target="_blank">Read the original information here</a></p>
     </div>
+    <div class="space-xl"></div>
 </section>
 {% endblock %}

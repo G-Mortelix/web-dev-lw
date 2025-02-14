@@ -1,24 +1,88 @@
 /* Career Overview Section */
 #career-groups {
-    background-image: url('/static/img/career-bg.png');
-    padding: 50px 0;
+    padding: 0;
 }
 
 #career-groups .section-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.625); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-#career-groups h1 {
-    font-size: 3.0rem;
-    margin-bottom: 30px;
+#career-groups img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove inline spacing */
+    margin-bottom: -4px; /* Edge-case fix for gaps */
 }
 
-#career-groups p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    text-align: left;
+/* Breadcrumb Navigation */
+.career-breadcrumb {
+    background-color: #1a1c22e0; /* Dark background */
+    padding: 10px 20px; /* Spacing inside */
+    font-size: 1rem;
+}
+
+.career-breadcrumb a {
+    color: white; /* Light text for contrast */
+    text-decoration: none;
+    margin-right: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.career-breadcrumb a:hover {
+    text-decoration: underline;
+    color: #ffcc00; /* Light yellow highlight on hover */
+}
+
+.career-breadcrumb span {
+    color: white;
+    margin: 0 5px;
+}
+
+/* General styling for the Careers section */
+#careers {
+    padding: 5%; /* Add padding for spacing */
+    border-radius: 10px; /* Optional: rounded corners */
+    margin-bottom: 30px; /* Space between this section and the next one */
+}
+
+#careers h1 {
+    font-size: 2.5rem;
+    color: black; /* Dark text for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+#careers p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8%;
+}
+
+#careers #why-work-with-us p{
+    font-size: 1.1rem;
+    color: black;
+    margin: 15px 0;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+#careers #company-culture p{
+    font-size: 1.1rem;
+    color: black;
+    margin: 15px 0;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+#careers .divider {
+    width: 100%;
+    margin: 15% auto 20px;
+
+    border: none;
+    border-top: 1px solid;
+    border-color: #212121;
 }
 
 #why-join-us {
@@ -38,31 +102,41 @@
 }
 
 #why-join-us li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 7px;
 }
 
 .career-grid-horizontal {
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
     gap: 15px;
     flex-wrap: wrap; 
     overflow-x: auto;
-    text-align: left;
+    height: 500px;
+    align-items: center;
 }
 
 .career-card-horizontal {
-    background-color: white;
+    background-color: f6f6f6;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px 0px rgb(30 28 37 / 48%);
     padding: 20px;
-    max-width: 200px;
+    max-width: 300px;
+    height: 450px;
     transition: box-shadow 0.3s ease;
 
     display: flex;
     flex-direction: column; 
     justify-content: space-between; 
+    align-items: center;
+}
+
+#career-groups .career-card-horizontal img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .career-card-horizontal h2 {
@@ -72,7 +146,8 @@
 
 .career-card-horizontal p {
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 .career-card-horizontal:hover {
@@ -87,7 +162,7 @@
 
 #career-groups .cta-button {
     padding: 10px 20px;
-    background-color: #a41867;
+    background-color: #121219;
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -98,16 +173,16 @@
 }
 
 #career-groups .cta-button:hover {
-    background-color: #7a0d45;
+    background-color: white;
+    color: black;
 }
 
 #career-group {
-    background-image: url('/static/img/career-group-bg.png');
-    padding: 50px 0;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 #career-group .section-container{
-    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -115,6 +190,21 @@
 #career-group h1 {
     font-size: 2rem;
     color: #000000;
+}
+
+#career-group img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#career-group .divider {
+    width: 100%;
+    margin: 10% auto 20px;
+
+    border: none;
+    border-top: 1px solid;
+    border-color: #212121;
 }
 
 /* Job List */
@@ -137,7 +227,7 @@
 
 .job-list-item ul li::before {
     content: "\2022";  
-    color: #1faf27;  
+    color: grey;  
     font-weight: bold;
     display: inline-block;
     width: 1.2em;
@@ -167,7 +257,7 @@
 .job-list-item .cta-button{
     display: inline-block;
     padding: 10px;
-    background-color: #a41839;
+    background-color: #141416;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -175,15 +265,96 @@
     margin: 10px;
 }
 
-.job-item .cta-button:hover {
-    background-color: #333;
+.job-list-item .cta-button:hover {
+    background-color: #fff267;
+    color: black;
 }
 
-#career-group .divider {
-    width: 50px;
-    height: 3px;
-    background-color: #1faf27;
-    margin: 0px;
+#career-group .job-list .divider {
+    width: 50%;
+    height: 5px;
+    background-color: #fff267;
+    margin: 3% 0 5%;
+}
+
+/* for cta in the end of career page*/
+/* CTA Section */
+
+#cta-career {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff267;
+}
+
+#cta-career h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#career-groups .cta-button-help {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#career-groups .cta-button-help:hover {
+    background-color: #211f0c;
+    color: #fff;
+}
+
+/* for cta in the end of career page*/
+/* CTA Section */
+
+#cta-career {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff267;
+}
+
+#cta-career h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#career-group .cta-button-help {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#career-group .cta-button-help:hover {
+    background-color: #211f0c;
+    color: #fff;
 }
 
 /*responsive*/

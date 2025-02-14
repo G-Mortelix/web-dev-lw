@@ -1,6 +1,6 @@
 /* News Categories Section */
 #news-page {
-    background: linear-gradient(to top left, #e2c2cf, #fef5f5);
+    background-color: white;
 }
 
 #news-page img {
@@ -9,21 +9,70 @@
 }
 
 #news-page .section-container {
+    background-color: rgba(255, 255, 255, 0.625); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     padding: 70px 20px 100px 20px;
+}
+
+/* Breadcrumb Navigation */
+.news-breadcrumb {
+    background-color: #1a1c22e0; /* Dark background */
+    padding: 10px 20px; /* Spacing inside */
+    font-size: 1rem;
+}
+
+.news-breadcrumb a {
+    color: white; /* Light text for contrast */
+    text-decoration: none;
+    margin-right: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.news-breadcrumb a:hover {
+    text-decoration: underline;
+    color: #ffcc00; /* Light yellow highlight on hover */
+}
+
+.news-breadcrumb span {
+    color: white;
+    margin: 0 5px;
+}
+
+#news-page h1 {
+    font-size: 2.5rem;
+    color: black; /* Dark text for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+#news-page p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8%;
+}
+
+#news-page #news-intro p {
+    font-size: 1.1rem;
+    color: black;
+    margin: 15px 0;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+#news-page .divider {
+    width: 100%;
+    margin: 15% auto 20px;
+
+    border: none;
+    border-top: 1px solid;
+    border-color: #212121;
 }
 
 .news-carousel {
     overflow-x: hidden;  
     width: 100%;
     position: relative;
-}
-
-#news-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    margin-top: 0;
-    color: #000000;
-    border-bottom: 1px dotted #000000;
+    height: 800px;
 }
 
 .news-pagination {
@@ -59,11 +108,10 @@
 }
 
 .news-card {
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
+    background-color: #f3f3f3;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 280px;  
-    max-height: 590px;
+    max-height: 700px;
     flex-shrink: 0;  
     text-align: left;
     transition: box-shadow 0.3s ease;
@@ -89,6 +137,31 @@
     margin: 5px 0px 0px 0px;
 }
 
+/* Breadcrumb Navigation */
+.news-details-breadcrumb {
+    background-color: #1a1c22e0; /* Dark background */
+    padding: 10px 20px; /* Spacing inside */
+    font-size: 1rem;
+    text-align: left;
+}
+
+#news-detail .news-details-breadcrumb a {
+    color: white; /* Light text for contrast */
+    text-decoration: none;
+    margin-right: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.news-details-breadcrumb a:hover {
+    text-decoration: underline;
+    color: #ffcc00; /* Light yellow highlight on hover */
+}
+
+.news-details-breadcrumb span {
+    color: white;
+    margin: 0 5px;
+}
+
 .news-content {
     padding: 15px;
 }
@@ -99,7 +172,7 @@
     color:rgb(2, 10, 37);
 }
 
-.news-content p {
+#news-page .news-card .news-content p {
     font-size: 1rem;
     color: #000000;
     text-align: justify;
@@ -172,10 +245,55 @@
 }
 
 
+/* for cta in the end of events page*/
+/* CTA Section */
+
+#cta-news {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff267;
+}
+
+#cta-news h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#cta-news p {
+    margin-bottom: 20px;
+}
+
+#news-page .section-container .cta-button-help {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#news-page .section-container .cta-button-help:hover {
+    background-color: #211f0c;
+    color: #fff;
+}
+
+
+
 /* News Detail Section */
 #news-detail {
     background: white;
-    padding: 50px 20px;
 }
 
 .news-detail-image {
@@ -193,7 +311,6 @@
 }
 
 #news-detail .section-container {
-    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }

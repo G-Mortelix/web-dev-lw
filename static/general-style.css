@@ -23,16 +23,12 @@ body {
 }
 
 .container {
-    max-width: 1200px;
     height: 100%;
-    padding: 0 50px;
     margin: 0 auto; 
 }
 
 .section-container {
-    max-width: 1200px;
     width: 100%;
-    padding: 0 1.5rem;
     box-sizing: border-box;
 }
 

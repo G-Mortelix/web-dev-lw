@@ -1,14 +1,31 @@
 <!-- news.html -->
 {% extends 'index.html' %}
 
-{% block title %}Latest News{% endblock %}
+{% block title %}Latest News - La Whizz{% endblock %}
 
 {% block content %}
 <section id="news-page">
     <img src="{{ url_for('static', filename='img/news-header.png') }}" alt="header-pic">
-    <div class="section-container">
-        <h1>Latest News</h1>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="news-breadcrumb">
+        <a href="/">Home</a> <span> > </span> <a href="/news">Latest News</a>
+    </nav> 
+    
+    <div class="section-container">
+        <h1>LATEST NEWS</h1>
+        <p>Get the Latest Insight from the Accounting World.</p>
+
+        <div class="divider"></div>
+        <section id="news-intro">
+            <h2>Stay informed with the latest updates</h2>
+            <p>At La Whizz, we are commited to keeping you updated in 
+                the latest news in accounting. Our news section provides 
+                important updates, trends, and industry changes, ensuring you 
+                stay well-informed and up-to-date.</p>
+        </section>
+
+        <div class="space-lg"></div>
         <div class="news-carousel">
             <div class="arrow arrow-left"><</div> 
             <div class="news-grid">
@@ -21,6 +38,8 @@
                              style="filter: hue-rotate({{ loop.index * 20 }}deg) saturate(0.85) brightness(1);">
                         <div class="news-content">
                             <h3><a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">{{ article.title }}</a></h3>
+
+                            <div class="space-sm"></div>
                             <p>{{ article.content[:150] }}... 
                             <a href="{{ url_for('user_bp.news_detail', news_id=article.id) }}">Read More</a></p>
                         </div>
@@ -38,6 +57,7 @@
                         </div>
                     </div>
                     {% endfor %}
+
                 {% else %}
                     <!-- Display 10 placeholders if no articles are available -->
                     {% for i in range(10) %}
@@ -61,6 +81,12 @@
                 {% endfor %}
             </div>
         </div>
+        <!-- Call to Action -->
+        <section id="cta-news">
+            <h2>Eager to Learn More?</h2>
+            <p>Get in touch to discover the latest insights.</p>
+            <a href="/contact" class="cta-button-help">Get in Touch</a>
+        </section>
     </div>
 
     <script>
