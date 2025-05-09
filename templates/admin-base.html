@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Admin{% endblock %}</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-base-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-editaddjob-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-editaddnews-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-dashboard-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-managejob-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-managenews-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-viewapplication-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin-viewinquiry-style.css') }}">
+    <title>{% block title %}Admin{% endblock %}</t
+        t>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-base-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-editaddjob-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-editaddnews-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-dashboard-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-managejob-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-managenews-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-viewapplication-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin-viewinquiry-style.css') }}">
 </head>
 <body>
     
@@ -22,7 +22,6 @@
         </div>
     </header>
 
-    
     <main>
         <div class="content-container">
             {% block content %}{% endblock %}
@@ -30,3 +29,4 @@
     </main>
 </body>
 </html>
+
